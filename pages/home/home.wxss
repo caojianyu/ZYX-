@@ -1,0 +1,185 @@
+/* pages/home/home.wxss */
+.page {
+    height: 100%;
+    width: 100%;
+  }
+.input-item{
+    height: 2.6rem;
+    width: 590rpx;
+    box-shadow: 0 0 4px whitesmoke;
+    border-radius: 20px;
+    color:rgb(132, 139, 136);
+    margin-left: 35px;
+    font-size: 14px;
+}
+/**文本框居中  计算轮播图高度减去文本框自身高度的一半*/
+.swiper-input{
+    position: absolute;
+    top: calc(25vh - 0rpx);
+    background: #fffdfd;
+    border-radius: 40rpx;
+    box-shadow: 0 0 8px #adaba9;
+    left: 43rpx;
+}
+.search-icon{
+  position: absolute;
+  top: 8.5px;
+  left: 8px;
+}
+.rech-fuw{
+    margin: 10px 0;
+}
+.bow{
+    padding-top: 20px;
+    margin-top: 10px;
+    margin: 0 10px;
+    position: relative;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 80rpx;
+    font-size: 26rpx;
+}
+.bow-item{
+    text-align: center;
+    width: 160rpx;
+    height: 170rpx;
+    margin-bottom: 15px;
+}
+.bow image{
+    width: 110rpx; 
+    height: 110rpx;
+}
+.title-item{
+    margin-top: 70rpx;
+    padding-left: 40rpx;
+}
+.title-item h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+.title-item span{
+    margin-left: 40rpx;
+    color: #c9c9c7;
+}
+.fist {
+     width: 100vw;
+     text-align: center;
+     position: relative;
+     margin: 20px 0;
+}
+.fist image{
+    box-shadow: 0px 0px 10px #cac9c4;
+    border-radius: 7px;
+    border: none;
+}
+.item-title-fangzhi{
+    padding-left:40px;
+    font-size: 12px;
+    align-items: center;
+}
+.gadget-title{
+    padding-left: 40rpx;
+    font-size: 20px;
+    font-weight: 800;
+}
+.Directsale{
+    margin-top: 30px;
+    position: relative;
+}
+.item-images image{
+    width: 300rpx;
+    height: 200rpx;
+    padding-left: 20px;
+    border:none;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #b6ae9f;
+}
+.Directsale-title{
+    margin-bottom: 20px;
+}
+.Directsale-title h1{
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 20px;
+}
+.Directsale-title span{
+    position: absolute;
+    right: 11px;
+    top: 5px;
+    font-size: 15px;
+    color: #c4bbbb;
+}
+.shterg-title{
+    padding:10px 20px;
+    letter-spacing: 2px;
+    font-size: 44rpx;
+    color: #101d36;
+    line-height: 70rpx;
+    font-weight: 700;
+}
+.shterg image{
+    position: relative;
+    border-radius: 2px;
+    width: 90vw;
+    height: 90px;
+    margin: auto;
+}
+.commission-image{
+    width: 100vw;
+    text-align: center;
+}
+.commission-image image{
+    height: 230rpx !important;
+}
+.commission-title{
+    margin: 20px 0;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-size: 44rpx;
+    color: #101d36;
+    line-height: 70rpx;
+    font-weight: 700;
+}
+.commission-image image{
+    width: 90%;
+    height: 100px;
+    align-items: center;
+}
+.keHu-item{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    margin: 15px auto;
+}
+.default{
+    color: whitesmoke;
+}
+.KeHuList{
+    width: 40vw;
+    text-align: center;
+    background: #f3f2f2;
+    border-radius: 6px;
+}
+.keHu-item image{
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.ke1{
+    font-size: 14px;
+    font-weight: 700;
+    color: #13161d;
+    margin: 10px 0;
+    vertical-align: middle;
+}
+.ke2{
+    margin: auto;
+    
+    width: 80%;
+    font-size: 10px;
+    color: #a79a9a;
+    margin-bottom: 10px;
+}

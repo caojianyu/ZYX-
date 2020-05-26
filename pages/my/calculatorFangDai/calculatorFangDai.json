@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "房贷计算",
+    "usingComponents": {
+        "get-user-info": "/components/getUserInfoView",
+        "no-data-trust": "/components/houseListNoDataTrust",
+        "house-detail-loading": "/components/houseDetailLoading",
+        "new-msg-view": "/components/newMsgView",
+        "scroll-loading": "/components/scrollLoading",
+        "loading-data": "/components/loadingData",
+        "login-view": "/components/loginView",
+        "collect-form-id": "/components/collectFormId"
+    }
+}

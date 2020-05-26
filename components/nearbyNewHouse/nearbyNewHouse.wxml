@@ -1,0 +1,26 @@
+<block wx:for="{{nearbyNewHouse}}" wx:key="index">
+	<view class="item-lsti-conent {{ index==2 ? 'sw1':''}}">
+		<view class="data02-tupian">
+			<view class="ysex01 {{item.zd=='1'?'':'hidden'}}"><text class="">正在热销</text></view>
+			<image class="data02-img" src="{{item.img}}" alt="" />
+		</view>
+		<view class="data02-title">
+			<view class="s1">{{item.title}}</view>
+			<view class="s2">{{item.stmel}} {{item.stmels}}</view>
+
+			<view class="s3">
+				<text class="q1">{{item.q1}}</text>
+				<text class="q1">{{item.q2}}</text>
+			</view>
+
+			<view class="s4">
+				<text style="color:red;font-weight:800;">{{item.number}}元/㎡</text>
+			</view>
+		</view>
+		<view class="xs1">
+			<view class="xs2" class="{{item.homeN===1 ? 'xs4':'xs2' }}">
+				<text class="">{{item.homeS}}</text>
+			</view>
+		</view>
+	</view>
+</block>

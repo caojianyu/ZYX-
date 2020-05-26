@@ -1,0 +1,11 @@
+/* components/h-swiper/h-swiper.wxss */
+.swiper{
+    height: 30vh;
+    width: 100vw;
+}
+.siper-item{
+    width: 100vw;
+}
+.siper-item image{
+    height: 100%;
+}

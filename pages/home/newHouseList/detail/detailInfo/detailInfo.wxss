@@ -1,0 +1,32 @@
+.container{
+	padding: 0rpx 40rpx;
+}
+.title{
+	font-weight: bold;
+	margin: 30rpx 0rpx;
+}
+.item{
+	display: flex;
+	font-size: 28rpx;
+	margin-bottom: 10rpx;
+}
+.item text:first-of-type{
+	color: #a1a1a1;
+	display: block;
+	width: 140rpx;
+	flex-shrink: 0;
+}
+.sellInfo{
+	padding-bottom:10rpx;
+	border-bottom: 4rpx solid #e7e7e7;
+	margin-bottom: 20rpx;
+}
+.title1{
+	font-size: 26rpx;
+	font-weight: 400;
+	margin-bottom: 20rpx;
+}
+sup{
+	 font-size: 10px;
+	 vertical-align:text-top;
+}

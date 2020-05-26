@@ -1,0 +1,10 @@
+<view class="container">
+	<view class="search">
+		<text class="icon-xingtaiduICON_sousuo--"></text>
+		<input value="{{residence}}" bindinput="input" placeholder="请输入小区或商圈名称"/>
+	</view>
+	<image bindtap="to" class="top1" src="{{img}}"></image>
+	<filtration style="font-size: 28rpx;"></filtration>
+	<nearbyNewHouse bindtap="detail" nearbyNewHouse="{{nearbyNewHouse}}"></nearbyNewHouse>
+	<image bindtap="map" class="map" src="../../../assets/home/newHouseList/map.jpg"></image>
+</view>

@@ -1,0 +1,31 @@
+<view class="container">
+	
+	<view wx:for="{{houseInfo}}" wx:key="index" class="item">
+		<view class="top">
+			<image src="{{item.images}}"></image>
+			<view class="right">
+				<text class="title" space="warn">{{item.title}}</text>
+				<view class="middle">
+					<text class="show">{{item.status==0?'显示中':''}}</text>
+					<view>
+						<text>浏览</text>
+						<text class="num">{{item.num}}</text>
+						<text>次</text>
+					</view>
+				</view>
+				<view class="bm">
+					<text class="price">{{item.price}}</text>
+					<text class="unit">万</text>
+					<text class="type">{{item.type}}</text>
+					<text class="area">{{item.area}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="bottom">
+			<text wx:if="{{item.status1==1}}">刷新</text>
+			<text wx:if="{{item.status2==1}}">下架</text>
+			<text>房源管理</text>
+		</view>
+	</view>
+	
+</view>

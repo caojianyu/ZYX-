@@ -1,0 +1,39 @@
+<view class="container">
+	<view class="title">君豪新城</view>
+	<view class="title1">销售信息</view>
+	<view class="sellInfo">
+		<view class="item">
+			<text>物业类型:</text>
+			<text>{{info.type}}</text>
+		</view>
+		<view class="item">
+			<text>售楼地址:</text>
+			<text>{{info.location}}</text>
+		</view>
+		<view class="item">
+			<text>物业公司:</text>
+			<text>{{info.wuliu}}</text>
+		</view>
+	</view>
+	
+	
+	<view class="title1">建筑规划</view>
+	<view class="construction">
+		<view class="item">
+			<text>建筑类型:</text>
+			<text>{{info.jianzhu}}</text>
+		</view>
+		<view class="item">
+			<text>开发商:</text>
+			<text>{{info.kaifashang}}</text>
+		</view>
+		<view class="item">
+			<text>占地面积:</text>
+			<view>{{info.area}}m<sup>2</sup></view>
+		</view>
+		<view class="item">
+			<text>建筑面积:</text>
+			<view>{{info.jzmj}}m<sup>2</sup></view>
+		</view>
+	</view>
+</view>

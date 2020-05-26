@@ -1,0 +1,47 @@
+<view class="container">
+	<view class="top">
+		<view bindtap="title" wx:for="{{title}}" wx:key="index" data-index="{{index}}"  class="title {{currentShow==index?'color':''}} {{isColor==index?'color':''}} {{isColor1==index?'color':''}} {{isColor2==index?'color':''}}">
+			<text>{{item}}</text>
+			<image src="../../assets/bottom.png"></image>
+		</view>
+	</view>
+	<!-- 区域 -->
+	<view wx:if="{{currentShow==0}}" class="area">
+		<scroll-view class="s1" scroll-y="true">
+			<view bindtap="currentArea" wx:for="{{areas}}" wx:key="index"
+			 data-index="{{index}}" 
+			 class="district {{currentArea==index?'color':''}}">{{item}}</view>
+		</scroll-view>
+		
+	</view>
+	<!-- 价格 -->
+	<view wx:if="{{currentShow==1}}" class="area noflex">
+		<view class="wrap">
+			<scroll-view class="s1" scroll-y="true">
+				<view bindtap="currentProce" wx:for="{{price}}"  wx:key="index" data-index="{{index}}" class="district  {{currentProce==index?'color':''}}">{{item}}</view>
+			</scroll-view>
+			<!-- 详细价格 -->
+			<scroll-view wx:if="{{currentAveragePrice}}" class="s2" scroll-y="true">
+				<view bindtap="averagePrice" wx:for="{{averagePrice}}"  wx:key="index" data-index="{{index}}" class="district {{averageColor==index?'color':''}}">{{item}}</view>
+			</scroll-view>
+			<scroll-view wx:if="{{totalAveragePrice}}" class="s2" scroll-y="true">
+				<view bindtap="totalPrice" wx:for="{{totalPrice}}"  wx:key="index" data-index="{{index}}" class="district {{totalColor==index?'color':''}}">{{item}}</view>
+			</scroll-view>
+		</view>
+		<view class="bottom">
+			<input class="average" placeholder="最低均价"/>
+			<input class="average" placeholder="最高均价"/>
+			<button bindtap="confirm" hover-class="none">确定</button>
+		</view>
+	</view>
+	<!-- 用途 -->
+	<view wx:if="{{currentShow==2}}" class="area">
+		<scroll-view class="s1" scroll-y="true">
+			<view bindtap="currentUse" wx:for="{{use}}"  wx:key="index" data-index="{{index}}" class="district {{currentUse==index?'color':''}}">{{item}}</view>
+		</scroll-view>
+		<!-- <scroll-view class="s2 white" scroll-y="true">
+		</scroll-view> -->
+	</view>
+	
+	
+</view>

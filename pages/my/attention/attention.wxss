@@ -1,0 +1,158 @@
+.container{
+	padding: 30rpx;
+}
+.title{
+	font-weight: bold;
+}
+.time{
+	font-size: 22rpx;
+	color: #ccc;
+	margin-top: 20rpx;
+}
+sup{
+	 font-size: 10px;
+	 vertical-align:text-top;
+}
+.item{
+	display: flex;
+	padding: 30rpx 0rpx;
+	border-bottom: 1rpx solid #eeeeee;
+}
+.item image{
+	width: 350rpx;
+	height: 180rpx;
+	margin-right: 20rpx;
+}
+.info{
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.top{
+	display: flex;
+	width: 100%;
+}
+.sell{
+	margin-left: auto;
+	font-size: 25rpx;
+	color: white;
+	background-color: #3096cc;
+	height: 35rpx;
+	padding:0rpx 5rpx;
+}
+.sell1{
+	margin-left: auto;
+	font-size: 25rpx;
+	color: white;
+	background-color: #e2b81e;
+	height: 35rpx;
+	padding:0rpx 5rpx;
+}
+.title{
+	font-weight: bold;
+	margin-bottom: 10rpx;
+}
+.location{
+	font-size: 25rpx;
+}
+.residence{
+	font-size: 25rpx;
+	margin-right: 20rpx;
+}
+.tags{
+	background-color: #f3f3f3;
+	font-size: 22rpx;
+	color: #3ebecc;
+	padding: 10rpx;
+	margin-right: 5rpx;
+	border-radius: 5rpx;
+}
+.price{
+	color: red;
+}
+.money{
+	font-weight: bold;
+}
+
+
+
+/* 模板2 */
+
+.item1{
+	display: flex;
+	padding: 30rpx 0rpx;
+	border-bottom: 1rpx solid #eeeeee;
+}
+.item1 image{
+	width: 350rpx;
+	height: 180rpx;
+	margin-right: 20rpx;
+}
+.item1{
+	padding-bottom: 10rpx;
+}
+.item1 .title{
+	margin-bottom: 34rpx;
+}
+.item1 .tag{
+	margin-bottom: 10rpx;
+}
+.wrap{
+	display: flex;
+	font-size: 26rpx;
+}
+.wrap .money{
+	font-size: 30rpx;
+}
+.area{
+	color: #a2a2a2;
+	margin: 0rpx 20rpx;
+}
+.wrap .sup{
+	font-size: 10px;
+	vertical-align:text-top
+}
+.size{
+	margin-right: 20rpx;
+}
+.choose{
+	position: absolute;
+	background-color: #3fbaa6;
+	color: white;
+	padding: 5rpx;
+	font-size: 28rpx;
+}
+/* 模板3 */
+
+.item2{
+	display: flex;
+	padding: 30rpx 0rpx;
+	border-bottom: 1rpx solid #eeeeee;
+}
+.item2 image{
+	width: 350rpx;
+	height: 180rpx;
+	margin-right: 20rpx;
+}
+.item2 .price{
+	margin-right: 20rpx;
+}
+.item2 .title{
+	margin-bottom: 40rpx;
+}
+.proprietor{
+	display: flex;
+	font-size: 28rpx;
+	align-items: center;
+	color: #a7a7a7;
+	margin-top: 10rpx;
+}
+.proprietor image{
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+}
+.name{
+	margin-right: 20rpx;
+}

@@ -1,0 +1,104 @@
+<!--顶部botton标签-->
+<view class="but-zhim">
+	<view class="but-item" wx:for="{{homeS}}" wx:key="index">
+		<button style="width:45vw" class="btn12 {{currentInexs==index ? 'ss1':'btn1'}}" data-index='{{index}}' type="primary"
+		 bindtap="onTaps">
+			{{item.title}}
+		</button>
+	</view>
+</view>
+
+<!--搜索文本框-->
+<view class="swiper-input">
+	<view class="da01">
+		<input class="input-item" placeholder="请输入小区或区域名称" type="text" />
+		<icon type="search" class="search-icon" size="25px"></icon>
+	</view>
+</view>
+
+<!--活动-->
+<view class="swiper-dadat1">
+	<view class="sd1">
+		<image bindtap="gotolistSellBuy" data-index="currentInexs" class="" src="{{mimg[currentInexs]}}" mode="widthFix"
+		 style="width:90%;height:115px" lazy-load="false" binderror="" bindload=""></image>
+	</view>
+</view>
+
+
+<!--筛选条件-->
+<view class="s1" hover-class="none" hover-stop-propagation="false">
+	<block class='com-selectBox' wx:for="{{dropList}}" wx:key="index">
+		<view class="com-sContent {{currentInex==index ? 'currentNav':''}}" bindtap='selectToggle' data-index='{{index}}'>
+			<view class='com-sTxt'>{{titlearray[index]==''?item.title:titlearray[index]}}</view>
+			<image src='{{item.img}}' class='com-sImg' animation="{{animationData}}"></image>
+		</view>
+
+	</block>
+	<view class="content {{showarray[0]==0?'hidden':''}}">
+		<block wx:for="{{diqu}}" wx:key="index">
+			<view bindtap="select" class="option {{cdiquindex==index ? 'currentNav':''}}" data-index='{{index}}' data-type='0'>{{diqu[index]}}</view>
+		</block>
+		<view class="btn-ok" bindtap="diquok">确认</view>
+	</view>
+
+	<view class="content {{showarray[1]==0?'hidden':''}}">
+		<block wx:for="{{jiage}}" wx:key="index">
+			<view bindtap="select" class="option {{cjiageindex==index ? 'currentNav':''}}" data-index='{{index}}' data-type='1'>{{jiage[index]}}</view>
+		</block>
+		<input type="text" placeholder="最低金额"></input><input type="text" placeholder="最高金额"></input>
+		<view class="btn-ok" bindtap="jiageok">确认</view>
+	</view>
+
+	<view class="content {{showarray[2]==0?'hidden':''}}">
+		<view class="hx">户型</view>
+		<view class="m-bottom clearfix">
+			<block wx:for="{{huxing}}" wx:key="index">
+				<view bindtap="select" class="huxing f-left {{chuxingindex==index ? 'current':''}}" data-index='{{index}}'
+				 data-type='2'>{{huxing[index]}}</view>
+			</block>
+			<view>
+			</view>
+
+		</view>
+
+		<view bindtap="buxian" class="btn-no">不限条件</view>
+		<view class="btn-ok" bindtap="huxingok">确认</view>
+	</view>
+	<view class="content {{showarray[3]==0?'hidden':''}}">
+		<view class="hx">面积</view>
+		<view class="fix clearfix">
+			<block wx:for="{{mianji}}" wx:key="index">
+				<view bindtap="select" class="huxing {{cmianjiindex==index ? 'current':''}}" data-index='{{index}}' data-type='3'>{{mianji[index]}}</view>
+			</block>
+			<view>
+			</view>
+
+		</view>
+		<view class="hx">类型</view>
+		<view class="fix clearfix">
+			<block wx:for="{{leixing}}" wx:key="index">
+				<view bindtap="select" class="huxing {{cleixingindex==index ? 'current':''}}" data-index='{{index}}' data-type='4'>{{leixing[index]}}</view>
+			</block>
+			<view>
+			</view>
+
+		</view>
+		<view bindtap="chongzhi" class="btn-no">重置</view>
+		<view class="btn-ok" bindtap="gengduook">确认</view>
+	</view>
+
+
+
+</view>
+
+<view bindtap="mengbanok" class="mengban {{mengban==0 ? 'hidden':''}}"></view>
+
+<block wx:if="{{currentInexs==0}}">
+	<!--房主直卖-->
+	<home-List-Item homeListItem="{{homeListItemFd}}" />
+</block>
+
+<block wx:else>
+	<!--优选房源-->
+	<home-god homeListItem="{{homeListItemYx}}" />
+</block>

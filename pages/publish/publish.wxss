@@ -1,0 +1,33 @@
+.container{
+	height: 100vh;
+	padding: 30rpx;
+}
+image{
+	width: 100%;
+	height: 350rpx;
+	border-radius: 20rpx;
+}
+image:nth-of-type(1){
+	margin-bottom: 20rpx;
+}
+.sell,
+.buy{
+	position: relative;
+}
+button{
+	position: absolute;
+	bottom: 77rpx;
+	width: 190rpx !important;
+	left: 58rpx;
+	height: 55rpx;
+	line-height: 43rpx !important;
+	border-radius: 50rpx !important;
+	font-size: 26rpx !important;
+	background-color: #3fbaa6;
+	color: #fff;
+	box-shadow: #ccc 0rpx 0rpx 20rpx 0rpx;
+	padding: 8rpx 0rpx !important;
+}
+button:active{
+	filter: brightness(90%);
+}

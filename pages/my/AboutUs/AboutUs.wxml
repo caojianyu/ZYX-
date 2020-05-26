@@ -1,0 +1,12 @@
+<view class="container">
+	<view class="top">
+		<image src="{{data.img}}" mode="aspectFill"></image>
+		<text>{{data.title}}</text>
+	</view>
+	<text class="content" space="warn">{{data.content}}</text>
+	<view class="wrap">
+		<view class="buttom">
+			客服电话{{data.phone}}
+		</view>
+	</view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+			"excellentHouse":"/components/excellentHouse/excellentHouse",
+			"nearbyNewHouse":"/components/nearbyNewHouse/nearbyNewHouse",
+			"personalHousing":"/components/personalHousing/personalHousing",
+			"swiper":"/components/swiper/swiper"
+	}
+}

@@ -1,0 +1,332 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"coverView": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.4",
+	"appid": "wx19e7d28ebe5647b7",
+	"projectname": "Salted-fish(311)",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/home/homeSellBuy/homeSellBuy",
+					"pathName": "pages/home/homeSellBuy/homeSellBuy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeGods/homeGods",
+					"pathName": "pages/home/homeGods/homeGods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/homeLeiBo",
+					"pathName": "pages/home/homeLeiBo/homeLeiBo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeWYue/homeWYue",
+					"pathName": "pages/home/homeWYue/homeWYue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/homeLeiBo",
+					"pathName": "pages/home/homeLeiBo/homeLeiBo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/home",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeGods/homeGod",
+					"pathName": "pages/home/homeGods/homeGod",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeWYue/homeWYue",
+					"pathName": "pages/home/homeWYue/homeWYue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/publish",
+					"pathName": "pages/publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/buy/buy",
+					"pathName": "pages/publish/buy/buy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/sell/sell",
+					"pathName": "pages/publish/sell/sell",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/newHouseList/newHouseList",
+					"pathName": "pages/home/newHouseList/newHouseList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/newHouseList/detail/detail",
+					"pathName": "pages/home/newHouseList/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/newHouseList/detail/detailInfo/detailInfo",
+					"pathName": "pages/home/newHouseList/detail/detailInfo/detailInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/personalHousing/personalHousing",
+					"pathName": "pages/home/homeLeiBo/personalHousing/personalHousing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/personalHousing/complain/complain",
+					"pathName": "pages/home/homeLeiBo/personalHousing/complain/complain",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/personalHousing/other/other",
+					"pathName": "pages/home/homeLeiBo/personalHousing/other/other",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/personalHousing/other/other",
+					"pathName": "pages/home/homeLeiBo/personalHousing/other/other",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/personalHousing/dealDetail/dealDetail",
+					"pathName": "pages/home/homeLeiBo/personalHousing/dealDetail/dealDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeGod/homeGodDetail/homeGodDetail",
+					"pathName": "pages/home/homeGod/homeGodDetail/homeGodDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeGod/homeGodDetail/homeGodDetail/homeGodDetailOther/homeGodDetailOther",
+					"pathName": "pages/home/homeGod/homeGodDetail/homeGodDetail/homeGodDetailOther/homeGodDetailOther",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeGod/homeGodDetail/homeGodDetail/homeGodDetailServe/homeGodDetailServe",
+					"pathName": "pages/home/homeGod/homeGodDetail/homeGodDetail/homeGodDetailServe/homeGodDetailServe",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/attention/attention",
+					"pathName": "pages/my/attention/attention",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/sell/detail/detail",
+					"pathName": "pages/publish/sell/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/release/release",
+					"pathName": "pages/my/release/release",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/sell/detail/detail",
+					"pathName": "pages/publish/sell/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/calculate/calculate",
+					"pathName": "pages/my/calculate/calculate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/calculate/calculate",
+					"pathName": "pages/my/calculate/calculate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/AboutUs/AboutUs",
+					"pathName": "pages/my/AboutUs/AboutUs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/agreement/agreement",
+					"pathName": "pages/my/agreement/agreement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/calculate/calculate",
+					"pathName": "pages/my/calculate/calculate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeGod/homeGodDetail/homeGodDetail",
+					"pathName": "pages/home/homeGod/homeGodDetail/homeGodDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 33,
+					"name": "pages/home/homeLeiBo/homeLeiBo",
+					"pathName": "pages/home/homeLeiBo/homeLeiBo",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/sell/detail/detail",
+					"pathName": "pages/publish/sell/detail/detail",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/sell/sell",
+					"pathName": "pages/publish/sell/sell",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/sell/detail/entrust/entrust",
+					"pathName": "pages/publish/sell/detail/entrust/entrust",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publish/sell/detail/detail",
+					"pathName": "pages/publish/sell/detail/detail",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/personalHousing/other/other",
+					"pathName": "pages/home/homeLeiBo/personalHousing/other/other",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/homeLeiBo/personalHousing/personalHousing",
+					"pathName": "pages/home/homeLeiBo/personalHousing/personalHousing",
+					"query": "id=0",
+					"scene": null
+				}
+			]
+		}
+	}
+}

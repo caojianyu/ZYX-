@@ -1,0 +1,18 @@
+<view class="container">
+	<image src="{{imags}}" mode="aspectFill"></image>
+	<view class="content">
+		<text class="info">你想卖哪的房子</text>
+		<view class="items">
+			<text bindtap="area" class="item {{area==index?'color':''}}" wx:for="{{site}}" data-index="{{index}}" wx:key="index">{{item}}</text>
+		</view>
+		<text class="info">你想出售的房屋类型？</text>
+		<view class="middle">
+			<text bindtap="type" wx:for="{{houseType}}" data-index="{{index}}" wx:key="index" class="item {{type==index?'color':''}}">{{item}}</text>
+		</view>
+		<text class="info">房屋所在小区？</text>
+		<view class="search">
+			<input value="{{residence}}" bindinput="input" placeholder="请输入小区名称或街道门牌号" />
+		</view>
+	</view>
+	<button bindtap="detail" class="btn" hover-class="none">下一步</button>
+</view>

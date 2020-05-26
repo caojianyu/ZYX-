@@ -1,0 +1,22 @@
+.container{
+	display: flex;
+	height: 100vh;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.text{
+	font-size: 100rpx;
+	color: #32BDB5;
+}
+.btn{
+	width:90% !important;
+	border-radius: 50rpx;
+	font-weight: normal;
+	background-color: #32BDB5;
+	color: white;
+	margin-top: 40rpx;
+}
+.btn:active{
+	filter: brightness(90%);
+}

@@ -1,0 +1,21 @@
+// /filters/numFormat.wxs
+/*
+ * ******注意不能用es6*******
+*/
+//保留两位小数
+var fnToFixed = function(num){
+    num = num.toFixed(2);//保留两位数,四舍五入保留两位小数
+    return num;
+};
+//传入金额换算成单位万元
+var fnMoney = function(money){
+    money = parseFloat(money)/10000;
+    //三元运算符判断如果为整数输入money否者调用toFixed方法
+    money = money % 1 == 0 ? money : money.toFixed(2);
+    return money;
+};
+
+module.exports = {
+    fnToFixed : fnToFixed,
+    fnMoney : fnMoney
+}

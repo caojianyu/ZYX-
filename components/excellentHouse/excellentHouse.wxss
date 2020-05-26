@@ -1,0 +1,121 @@
+.item-lsti-conent{
+    border-bottom: 2px solid whitesmoke;
+    display: flex;
+    width: 90vw;
+    padding: 30rpx 0;
+    padding-left: 0px;
+    margin: 10rpx 0;
+}
+.data02-img{
+    position: relative;
+    width: 216rpx;
+    height: 160rpx;
+    flex-shrink: 0;
+    background-size: cover;
+    border-radius: 4rpx;
+    box-sizing: border-box;
+}
+.data02-title{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    letter-spacing: 2rpx;
+    padding-left: 30rpx;
+    color: #05070ade;
+    font-size: 24rpx;
+}
+.sw1{
+    border: none !important;
+}
+.s3{
+    padding: 6rpx 0;
+}
+.s3 text:first-of-type{
+	font-size: 34rpx;
+}
+.data02-title .s1{   
+    width: 100%;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #101d36;
+    line-height: 42rpx;
+    margin-bottom: 12rpx;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: -4rpx;
+}
+.data02-title image{
+    border-radius: 50%;
+    border: none;
+}
+.li01{
+    width: 70vw;
+    margin: auto;
+    text-align: center;
+}
+.list-foot{
+  color: #cacaca;
+   font-size: 24rpx !important;
+   margin-top:40px;
+   margin-bottom:60px;  
+}
+.list-gods{ 
+    width: 70vw !important;
+    height: 64px  !important;
+    font-size: 24px !important;
+    text-align: center  !important;
+    background:#3fbaa6 !important;
+}
+.s4{
+    display: flex;
+}
+.x1{
+    border-radius: 8rpx;
+    background: #dff4f2;
+    margin-right: 10rpx;
+    padding: 4rpx 10rpx;
+    color: #3fbaa6 !important;
+    letter-spacing: 2rpx;
+    height: 26rpx;
+    text-align: center;
+    line-height: 26rpx;
+}
+.ysex02{
+    width: 100%;
+    height: 40rpx;
+    bottom: 0;
+    background: #ff2929;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: 2rpx;
+    position: absolute;
+    z-index: 9;
+    font-size: 26rpx;
+}
+.ysex01{
+    width: 80rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    border: none;
+    background: #3fbaa6;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: 2rpx;
+    position: absolute;
+    left: 10rpx;
+    top: 10rpx;
+    z-index: 9;
+    font-size: 26rpx;
+}
+.data02-tupian{
+  height: 160rpx;
+	position: relative;
+}
+.hidden{
+  display: none;
+}

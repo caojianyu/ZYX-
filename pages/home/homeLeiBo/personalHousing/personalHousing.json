@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+		"personalHousing":"/components/personalHousing/personalHousing",
+		"excellentHouse":"/components/excellentHouse/excellentHouse",
+		"nearbyNewHouse":"/components/nearbyNewHouse/nearbyNewHouse",
+		"swiper":"/components/swiper/swiper"
+	},
+	"navigationBarTitleText": "房主直卖1"
+}

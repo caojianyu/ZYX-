@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "h-swiper":"/components/h-swiper/h-swiper",
+    "home-List-Item":"/components/homeListItem/homeListItem",
+    "home-god":"./homeGod/homeGod",
+    "home-god-list":"./homeGodList/homeGodList",
+		"xixi":"/components/component/component"
+  }
+} 

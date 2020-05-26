@@ -1,0 +1,44 @@
+.container{
+	width: 100vw;
+	height: 100vh;
+}
+.top{
+	width: 100%;
+	background-color: #f1f1f1;
+	height: 70rpx;
+	line-height: 70rpx;
+	padding: 0rpx 30rpx;
+	font-size: 28rpx;
+	color: #a7a7a7;
+	border-bottom: 1rpx solid #d6d6d6;
+}
+.content{
+	padding: 0rpx 30rpx;
+}
+.item{
+	position: relative;
+	height: 100rpx;
+	line-height: 100rpx;
+	border-bottom: 1rpx solid #d6d6d6;
+	display: flex;
+}
+button{
+	width: 93% !important;
+	background-color: #27bbb2;
+	color: white;
+	font-weight: normal !important;
+	margin: 0rpx 30rpx;
+	bottom: 30rpx; 
+}
+.b{
+	width: 100%;
+	position: fixed;
+	bottom: 20rpx;
+}
+.icon-dui{
+	font-family: 'iconfont';
+	margin-left: auto;
+}
+.color{
+	color:#27bbb2;
+}

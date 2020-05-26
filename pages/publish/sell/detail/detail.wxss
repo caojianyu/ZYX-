@@ -1,0 +1,345 @@
+.container {
+	padding: 40rpx;
+}
+
+.type {
+	background-color: blue;
+}
+.topq input{
+	border: 1rpx solid #ccc;
+}
+.ww input{
+	height: 80rpx !important;
+}
+.qingkuang {
+	justify-content: space-between;
+}
+
+.info {
+	position: relative;
+	font-weight: bold;
+	font-size: 34rpx;
+	margin-left: 28rpx;
+}
+
+.info1::after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 4rpx;
+	height: 27rpx;
+	background-color: #333;
+	border-radius: 10rpx;
+	top: 7rpx;
+	left: -8px;
+}
+
+.info::before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 12rpx;
+	height: 40rpx;
+	background-color: #3fbaa6;
+	border-radius: 10rpx;
+	top: -2rpx;
+}
+
+.item {
+	display: flex;
+	width: 100%;
+	padding-bottom: 10rpx;
+}
+
+.item input {
+	margin-right: 20rpx;
+	width: 200rpx !important;
+	font-size: 36rpx;
+}
+
+.m {
+	align-self:flex-end;
+	margin-bottom: 10rpx;
+}
+
+.margin {
+	display: flex;
+	margin: 40rpx 0rpx;
+}
+
+input {
+	width: 150rpx;
+	height: 35px;
+	text-align: center;
+	font-size: 28rpx;
+	border-radius: 7rpx;
+}
+
+.area {
+	border-bottom: 1rpx solid #ccc;
+	padding-bottom: 20rpx;
+}
+
+.area1 {
+	display: block;
+	margin: 20rpx 0rpx;
+	font-size: 28rpx;
+}
+
+.input-item input {
+	margin-right: 20rpx;
+}
+
+.yuan input {
+	margin-right: 20rpx;
+}
+
+textarea {
+	border: 1rpx solid #ccc;
+	width: 100%;
+	margin-top: 20rpx;
+	padding: 20rpx;
+	box-sizing: border-box;
+	border-radius: 10rpx;
+}
+
+textarea[placeholder] {
+	font-size: 28rpx;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 28rpx;
+	margin: 10rpx 0rpx;
+}
+
+.titleInput {
+	width: 100%;
+	margin-bottom: 20rpx;
+}
+
+.pictrue {
+	color: #999999;
+	font-size: 26rpx;
+	margin-top: 20rpx;
+	margin-bottom: 20rpx ;
+}
+
+.icon-jia {
+	font-family: 'iconfont';
+	width: 200rpx;
+	height: 200rpx;
+	background-color: #ececec;
+	font-size: 80rpx;
+	line-height: 200rpx;
+	text-align: center;
+	color: #ccc;
+}
+
+.pictures {
+	display: flex;
+	padding: 20rpx 0rpx;
+	margin-bottom: 20rpx;
+}
+.phone1{
+	margin: 30rpx 0rpx;
+}
+.pictures image {
+	width: 200rpx;
+	height: 200rpx;
+	margin: 0rpx 45rpx 34rpx 0rpx;
+}
+
+.pictures {
+	width: 100%;
+	padding: 20rpx 0rpx;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+image:nth-child(3n) {
+	margin-right: 0rpx;
+}
+
+.btn {
+	width: 90% !important;
+	border-radius: 50rpx;
+	font-weight: normal;
+	background-color: #3fbaa6;
+	color: white;
+	margin-top: 40rpx;
+}
+
+.btn:active {
+	filter: brightness(90%);
+}
+
+.icon-you {
+	font-family: 'iconfont';
+	color: #ccc;
+}
+
+.icon-you {
+	font-family: 'iconfont';
+	margin-left: auto;
+}
+
+.picker {
+	color: #b4b4b4;
+}
+
+.left {
+	display: flex;
+	align-items: baseline;
+	color: #878787;
+}
+
+.left1 {
+	margin-right: 40rpx;
+}
+
+.le::after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 4rpx;
+	height: 27rpx;
+	background-color: #878787;
+	border-radius: 10rpx;
+	top: 10rpx;
+	right: -21rpx;
+}
+
+.base {
+	align-items: baseline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 自定义piker */
+.hidden {
+	display: none !important;
+}
+
+.picker {
+	width: 100%;
+	background-color: #fff;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+}
+
+.pikerTitle {
+	background-color: #f9f9f9;
+	display: flex;
+	justify-content: space-between;
+	padding: 0rpx 40rpx;
+	height: 80rpx;
+	align-items: center;
+	font-size: 28rpx;
+}
+
+/* 请选择户型 */
+.choose {
+	color: #acacac;
+}
+
+.confirm {
+	color: #3fbaa6;
+	font-size: 30rpx;
+}
+
+.zhuti {
+	color: #3fbaa6 !important;
+}
+.top1{
+	border-top: 2rpx solid #3fbaa6;
+}
+
+picker-view {
+	padding: 0rpx 40rpx;
+}
+
+/* 户型样式 */
+.color {
+	background-color: #eeeeee;
+}
+
+.guige {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: fixed;
+	background-color: #fff;
+	width: 100%;
+	bottom: 0;
+	z-index: 10000;
+}
+
+.guige text:first-of-type {
+	font-size: 26rpx;
+	color: #cfcfcf;
+}
+
+.top {
+	display: flex;
+	flex-direction: column;
+	height: 130rpx;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	text-align: center;
+}
+
+.top text:last-of-type {
+	font-size: 34rpx;
+	margin-top: 10rpx;
+	font-weight: 400;
+	color: #333;
+}
+
+.pickerIiew {
+	color: #333;
+}
+picker-view-column view{
+	font-size: 36rpx;
+}
+
+
+
+.phone{
+	display: flex;
+	justify-content: space-between;
+	margin: 20rpx 0rpx;
+	align-items: center;
+}
+radio{
+	margin-left: 20rpx;
+}
+.item input{
+	border-bottom: 1rpx solid #ccc;
+}
+
+.phone1{
+	width: 300rpx;
+	font-size: 30rpx;
+	text-align: left;
+	border-bottom: 1rpx solid #ccc;
+	padding-left: 20rpx;
+}
+.phone1[placeholder]{
+		font-size: 36rpx;
+}

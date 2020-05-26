@@ -1,0 +1,22 @@
+.container{
+	padding:40rpx 30rpx;
+}
+.title,
+.top{
+	font-size: 30rpx;
+	font-weight: bold;
+}
+.top{
+	text-indent: 2em;
+}
+.side{
+	font-size: 24rpx;
+	margin: 15rpx 0rpx;
+	text-indent: 1em;
+	color: #8b8b8b;
+}
+.content{
+	font-size: 24rpx;
+	text-indent: 2em;
+	color: #464646;
+}

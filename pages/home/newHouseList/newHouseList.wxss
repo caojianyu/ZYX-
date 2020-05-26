@@ -1,0 +1,51 @@
+.container{
+	padding: 40rpx;
+}
+.search{
+	display: flex;
+	align-items: center;
+	height: 70rpx;
+	background-color: #f3f3f3;
+	border-radius: 50rpx;
+}
+input{
+	width: 80%;
+}
+.icon-xingtaiduICON_sousuo--{
+	font-family: 'iconfont';
+	color: #c1c1c1;
+	margin: 0rpx 20rpx;
+}
+input[placeholder]{
+	font-size: 28rpx;
+}
+.top1{
+	height: 240rpx;
+	width: 100%;
+	border-radius: 20rpx;
+	margin-top: 20rpx;
+}
+.choose{
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1rpx solid #d8d8d8;
+	padding-bottom: 20rpx;
+}
+
+.map{
+	position: fixed;
+	bottom: 100rpx;
+	right: 20rpx;
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+	box-shadow: 0rpx 0rpx 20rpx 5rpx #ccc;
+}
+sup{
+	font-size: 10px;
+	vertical-align: text-top;
+}
+.icon-xia{
+	font-family: 'iconfont';
+	color: red;
+}

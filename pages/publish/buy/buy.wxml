@@ -1,0 +1,63 @@
+<view class="container">
+	<!-- 发布头部图片 -->
+	<image src="{{img}}" mode="aspectFill"></image>
+	<view class="content">
+		<text class="info">你想买什么样的房子？</text>
+
+		<view class="items">
+			<text bindtap="type" wx:for="{{type}}" wx:key="index" data-index="{{index}}" class="item {{currentTypeChoose==index?'blue':''}}">{{item}}</text>
+		</view>
+
+		<text class="info">你对装修的要求？</text>
+
+		<view class="middle">
+			<text bindtap="fitment" wx:for="{{fitment}}" wx:key="index" data-index="{{index}}" class="item {{currentFitmentChoose==index?'blue':''}}">{{item}}</text>
+		</view>
+
+		<text class="info">你想要几室的房子？</text>
+
+		<view class="big">
+			<text bindtap="specification" wx:for="{{specification}}" wx:key="index" data-index="{{index}}" class="item {{currentSpecificationChoose==index?'blue':''}}">{{item}}</text>
+		</view>
+
+		<view class="info ma">你想要多大的房子？</view>
+		<slider selected-color="#32BDB5" bindchange="change" step="5" min="50" max="200" show-value="true"></slider>
+		<view class="price">
+			<text>50m²</text>
+			<text>100m²</text>
+			<text>140m²</text>
+			<text>180m²</text>
+			<text>200m²</text>
+		</view>
+		<view>
+			<text></text>
+		</view>
+		<view class="info ma">你的预算是多少？</view>
+		<slider selected-color="#32BDB5" bindchange="change1" step="5" min="30" max="150" show-value="true"></slider>
+		<view class="price">
+			<text>30万</text>
+			<text>50万</text>
+			<text>70万</text>
+			<text>100万</text>
+			<text>150万</text>
+		</view>
+		<text class="info">你想关注区域？</text>
+		<view class="search">
+			<text class="icon-xingtaiduICON"></text>
+			<input value="{{residence}}" bindinput="input" placeholder="请填写您需求的小区或区域(选填)" />
+		</view>
+		<text class="info">称呼</text>
+		<view class="phone">
+			<input bindinput="name" class="phone1" placeholder="请输入称呼" />
+			<view>
+				<radio-group>
+					<radio checked>先生</radio>
+					<radio>女士</radio>
+				</radio-group>
+			</view>
+		</view>
+		<text class="info">手机号</text>
+		<input bindinput="number1" maxlength="11" class="phone1" placeholder="请输入手机号" />
+	</view>
+	<button bindtap="publish" class="btn" hover-class="none">发布</button>
+</view>

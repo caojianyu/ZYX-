@@ -1,0 +1,86 @@
+.item-lsti-conent{
+    border-bottom: 4rpx solid whitesmoke;
+    display: flex;
+    width: 90vw;
+    padding: 30rpx 0;
+    padding-left: 0px;
+    margin: 10rpx 0;
+}
+.data02-img{
+    position: relative;
+    width: 216rpx;
+    height: 160rpx;
+    flex-shrink: 0;
+    background-size: cover;
+    border-radius: 4rpx;
+    box-sizing: border-box;
+}
+.data02-tupian{
+  height: 160rpx; 
+	position: relative;
+}
+.ysex01{
+    width: 100%;
+    /* height: 80rpx; */
+    bottom: 0;
+    background: #ff2929;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: 2rpx;
+    position: absolute;
+    z-index: 9;
+    font-size: 26rpx;
+}
+.data02-title{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    letter-spacing: 2rpx;
+    padding-left: 30rpx;
+    color: #05070ade;
+    font-size: 24rpx;
+}
+.data02-title image{
+    border-radius: 50%;
+    border: none;
+}
+.data02-title .s1{   
+    width: 100%;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #101d36;
+    line-height: 42rpx;
+    margin-bottom: 12rpx;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: -4rpx; 
+}
+.s3{
+    padding: 6rpx 0;
+}
+.s4 image{
+    vertical-align: middle;
+    margin: 0 6rpx;
+    border-radius: 50%;
+}
+.s4 text{
+    color: #101d37;
+    font-size: 27rpx;
+    padding: 20rpx 0;
+    vertical-align: middle; 
+}
+.vLine {
+    margin: 0 8rpx;
+    border-left: solid 1px #ccc;
+    height: 20rpx;
+    vertical-align: middle;
+    display: inline-block
+}
+.hidden{
+  display: none;
+}

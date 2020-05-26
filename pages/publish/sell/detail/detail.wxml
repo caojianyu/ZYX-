@@ -1,0 +1,215 @@
+<view class="container">
+	<text class="info">你的房屋基本情况</text>
+	<view class="margin qingkuang topq">
+		<input bindinput="dong" maxlength="5" placeholder="几栋" />
+		<input bindinput="danyuan" maxlength="5" placeholder="几单元" />
+		<input bindinput="lou" maxlength="5" placeholder="几楼" />
+		<input bindinput="hao" maxlength="5" placeholder="几号" />
+	</view>
+	<text class="info">户型</text>
+	<text class="info info1">朝向</text>
+	<text class="info info1">楼层</text>
+
+	<!-- 户型 -->
+	<view bindtap="picker1" class="margin base">
+		<view wx:if="{{huxing!=0}}" class="left">
+			<view class="left1 le">{{formData.piker[0].three[huxing[0]]}}{{formData.piker[0].three1[huxing[1]]}}{{formData.piker[0].three2[huxing[2]]}}</view>
+			<view class="left1 le">{{formData.piker[1].three_1[chaoxiang]}}</view>
+			<view class="left1">{{formData.piker[2].three_2[louceng[0]]}}/{{formData.piker[2].treee_3[total]}}</view>
+		</view>
+		<view wx:else style=" color: #878787;">请选择</view>
+		<text class="icon-you"></text>
+	</view> 
+	<text class="info">装修</text>
+	<text class="info info1">供暖</text>
+	<text class="info info1">电梯</text>
+
+	<!-- 装修 -->
+	<view bindtap="picker2" class="margin">
+		<view wx:if="{{zhuangxiu!=0}}" class="left">
+			<view class="left1 le">{{formData.piker[1].zhuangxiu[zhuangxiu]}}</view>
+			<view class="left1 le">{{formData.piker[1].gongnuan[gongnuan]}}</view>
+			<view class="left1">{{formData.piker[1].dianti[dianti]}}</view>
+		</view>
+		<view wx:else style="color: #878787;" wx:else>请选择</view>
+		<text class="icon-you"></text>
+	</view>
+	<text class="info">房屋类型</text>
+	<text class="info info1">产权类型</text>
+	<text class="info info1">产权年限</text>
+
+	<!-- 类型 -->
+	<view bindtap="picker3" class="margin">
+		<view wx:if="{{zhuzhai!=0}}" class="left">
+			<view class="left1 le">{{formData.piker[2].putong[zhuzhai]}}</view>
+			<view class="left1 le">{{formData.piker[2].shangpin[shanpin]}}</view>
+			<view class="left1">{{formData.piker[2].nianxian[chanquan]}}</view>
+		</view>
+		<view style="color: #878787;" wx:else>请选择</view>
+		<text class="icon-you"></text>
+	</view>
+
+	<text class="info">面积</text>
+
+	<view class="margin">
+		<view class="item">
+			<input bindinput="inputArea" placeholder="请输入面积" maxlength="5" />
+			<view class="m">m²</view>
+		</view>
+	</view>
+
+	<text class="info">售价</text>
+
+	<view class="margin">
+		<view class="item">
+			<input bindinput="inputSell" maxlength="5" placeholder="请输入价格" />
+			<text class="m">万元</text>
+		</view>
+	</view>
+	<text class="info">请输入房源描述</text>
+	<view class="margin">
+		<textarea bindinput="content" maxlength="300" placeholder="请输入装修配套等体现房屋亮点的简单描述(选填)"></textarea>
+	</view>
+
+	<text class="info">请输入标题</text>
+
+	<view class="margin topq ww">
+		<input style="margin-bottom: 10rpx; text-align: left; padding-left: 20rpx;" bindinput="title" class="titleInput" placeholder="一个好的标题可以引来更多用户的关注(必填)" />
+	</view>
+	<text class="info">请上传房源图片</text>
+	<view class="pictrue" style="margin-top: 30rpx;">多图房源更容易接到客户的来电哦(最多九张图)</view>
+	<view class="pictures">
+		<image bindtap="previewImage" wx:for="{{images}}" wx:key="index" data-index="{{index}}" src="{{item}}" mode="aspectFill"></image>
+		<view bindtap="chooseImage" class="icon-jia"></view>
+	</view>
+	<text class="info">称呼</text>
+	<view class="phone">
+	<input bindinput="name" class="phone1" placeholder="请输入称呼"/>
+	<view>
+		<radio-group>
+			<radio checked>先生</radio>
+			<radio>女士</radio>
+		</radio-group>
+	</view>
+	</view>
+	<text class="info">手机号</text>
+	<input bindtap="number" maxlength="11" class="phone1" placeholder="请输入手机号"/>
+	
+	<button bindtap="next" class="btn" hover-class="none">下一步</button>
+</view>
+<!-- maske -->
+<view class="marke {{piker1?'':'hidden'}}" style="width:100%; height: 100%; background-color: #333; opacity: 0.5; z-index: 100;position: fixed; top: 0;bottom: 0;left: 0;right: 0;"></view>
+<!-- piker1 -->
+<view class="guige {{piker1?'':'hidden'}}">
+	<view class="picker">
+		<view bindtap="choose1" wx:for="{{formData.piker}}" data-index="{{index}}" wx:key="index" class="top {{titleIndex==index?'color':''}}">
+			<text>{{item.one}}</text>
+			<text class="{{index==titleIndex?'zhuti':''}}" style="font-size: 30rpx;">{{item.two}}</text>
+		</view>
+	</view>
+	<view class="pikerTitle">
+		<text bindtap="cancel1" class="cancel">取消</text>
+		<text class="choose">请选择{{titleIndex==0?'户型':titleIndex==1?'朝向':'楼层'}} </text>
+		<text bindtap="confirm1" class="confirm">确认</text>
+	</view>
+	<picker-view class="{{titleIndex==0?'':'hidden'}}" style=" width: 100%; height: 450rpx;box-sizing: border-box;" value="{{value}}"
+	 bindchange="bindchange1">
+		<picker-view-column>
+			<view class="pickerIiew" wx:for="{{formData.piker[0].three}}" wx:key="index" style="line-height: 50px;text-align:center;">{{item}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view class="pickerIiew" wx:for="{{formData.piker[0].three1}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view class="pickerIiew" wx:for="{{formData.piker[0].three2}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+	<!-- 第一项 -->
+	<picker-view class="{{titleIndex==1?'':'hidden'}}" style="width: 100%; height: 450rpx;box-sizing: border-box;"
+	 bindchange="bindchange1_1">
+		<picker-view-column>
+			<view wx:for="{{formData.piker[1].three_1}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+	<picker-view class="{{titleIndex==2?'':'hidden'}}" style="width: 100%; height: 450rpx;box-sizing: border-box;"
+	 bindchange="bindchange1_2">
+		<picker-view-column>
+			<view wx:for="{{formData.piker[2].three_2}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view wx:for="{{formData.piker[2].treee_3}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+</view>
+<!-- 第二项 -->
+<view class="marke {{piker2?'':'hidden'}}" style="width:100%; height: 100%; background-color: #333; opacity: 0.5; z-index: 100;position: fixed; top: 0;bottom: 0;left: 0;right: 0;"></view>
+<view class="guige {{piker2?'':'hidden'}} ">
+	<view class="picker">
+		<view bindtap="choose2" wx:for="{{formData.piker}}" data-index="{{index}}" wx:key="index" class="top {{titleIndex_2==index?'color':''}}">
+			<text>{{item.one_1}}</text>
+			<text class=" {{titleIndex_2==index?'zhuti':''}}">{{item.two_1}}</text>
+		</view>
+	</view>
+	<view class="pikerTitle">
+		<text bindtap="cancel2" class="cancel">取消</text>
+		<text class="choose">请选择{{titleIndex_2==0?'装修':titleIndex_2==1?'供暖':'电梯'}}</text>
+		<text bindtap="confirm2" class="confirm">确认</text>
+	</view>
+	<!-- 装修 -->
+	<picker-view class="{{titleIndex_2==0?'':'hidden'}}" style="width: 100%; height: 450rpx;box-sizing: border-box;"
+	 bindchange="bindchange2">
+		<picker-view-column>
+			<view wx:for="{{formData.piker[1].zhuangxiu}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+	<!-- 供暖 -->
+	<picker-view class="{{titleIndex_2==1?'':'hidden'}}" style="width: 100%; height: 450rpx;box-sizing: border-box;"
+	 bindchange="bindchange2_1">
+		<picker-view-column>
+			<view wx:for="{{formData.piker[1].gongnuan}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+	<!-- 电梯 -->
+	<picker-view class="{{titleIndex_2==2?'':'hidden'}}" style="width: 100%; height: 450rpx;box-sizing: border-box;"
+	 bindchange="bindchange2_2">
+		<picker-view-column>
+			<view wx:for="{{formData.piker[1].dianti}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+</view>
+<!-- 第三项 -->
+<view class="marke {{piker3?'':'hidden'}}" style="width:100%; height: 100%; background-color: #333; opacity: 0.5; z-index: 100;position: fixed; top: 0;bottom: 0;left: 0;right: 0;"></view>
+<view class="guige {{piker3?'':'hidden'}} ">
+	<view class="picker">
+		<view bindtap="choose3" wx:for="{{formData.piker}}" data-index="{{index}}" wx:key="index" class="top {{titleIndex_3==index?'color':''}}">
+			<text>{{item.one_2}}</text>
+			<text class=" {{titleIndex_3==index?'zhuti':''}}">{{item.two_2}}</text>
+		</view> 
+	</view>
+	<view class="pikerTitle">
+		<text bindtap="cancel3" class="cancel">取消</text>
+		<text class="choose">请选择{{titleIndex_3==0?'住宅':titleIndex_3==1?'产权':'年限'}}</text>
+		<text bindtap="confirm3" class="confirm">确认</text>
+	</view>
+	<!-- 住宅 -->
+	<picker-view class="{{titleIndex_3==0?'':'hidden'}}" style="width: 100%; height: 450rpx;box-sizing: border-box;"
+	 bindchange="bindchange3">
+		<picker-view-column>
+			<view wx:for="{{formData.piker[2].putong}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+	<!-- 商品 -->
+	<picker-view class="{{titleIndex_3==1?'':'hidden'}}" style="width: 100%; height: 450rpx;box-sizing: border-box;"
+	 bindchange="bindchange3_1">
+		<picker-view-column>
+			<view wx:for="{{formData.piker[2].shangpin}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+	<!-- 产权 -->
+	<picker-view class="{{titleIndex_3==2?'':'hidden'}}" style="width: 100%; height: 450rpx;box-sizing: border-box;"
+	 bindchange="bindchange3_2">
+		<picker-view-column>
+			<view wx:for="{{formData.piker[2].nianxian}}" wx:key="index" style="line-height: 50px;text-align: center;">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+</view>

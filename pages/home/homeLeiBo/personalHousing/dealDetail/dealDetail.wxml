@@ -1,0 +1,7 @@
+<view class="container">
+	<image src="{{img}}" mode="widthFix"></image>
+	<view class="buttom-item">
+		<button bindtap="back" class="bu1" type="primary" style="width:40%">我知道了</button>
+		<button bindtap="call" class="bu2" type="primary" style="width:40%;background:#0da7ce">联系客服</button>
+	</view>
+</view>

@@ -1,0 +1,1 @@
+<view bindtap="demo" wx:for="{{info}}" wx:key="index" data-index="{{index}}" class="component">{{item}}</view>

@@ -1,0 +1,556 @@
+page {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.hoverClass {
+    opacity: .5;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    border-radius: 0;
+    border: none;
+}
+
+button:after {
+    border: none;
+}
+
+.flexRowStart {
+    display: flex;
+}
+
+.flexRowSpaceBetween {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.flexRowCenter {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.flexRowEnd {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+.flexColumnStart {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.flexColumnSpaceBetween {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.flexColumnCenter {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.g-top-scroll-tab {
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #f0f3f5;
+    padding: 0 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.f-top-btn,button.f-top-btn {
+    line-height: 108rpx;
+    height: 100%;
+    width: 25%;
+    flex-shrink: 0;
+    text-align: center;
+    color: #8e94a1;
+    background: #fff;
+    font-size: 32rpx;
+    display: inline-block;
+    border-radius: 0;
+}
+
+.f-top-btn[disabled] {
+    color: #10191d;
+}
+
+.f-top-btn-text {
+    display: inline-block;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.f-top-btn-active {
+    position: relative;
+    color: #10191d;
+    display: block;
+    font-weight: 700;
+}
+
+.f-top-btn-active:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12rpx;
+    height: 8rpx;
+    background: #3fc6be;
+    width: 50rpx;
+    border-radius: 4rpx;
+    box-sizing: border-box;
+}
+
+.swiperView {
+    width: 100%;
+    height: 500%;
+}
+
+.swiperViewItem {
+    width: 100%;
+    height: 100%;
+}
+
+.contentInfoView {
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 30rpx;
+    box-sizing: border-box;
+}
+
+.contentView {
+    padding-left: 40rpx;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1rpx solid #f5f5f5;
+    background-color: #fff;
+}
+
+.contentInput {
+    padding-right: 40rpx;
+    box-sizing: border-box;
+    width: 100%;
+    height: 120rpx;
+    line-height: 120rpx;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.contentView .contentInput:last-child {
+    border-bottom: none;
+}
+
+.inputLabelView {
+    height: 120rpx;
+    line-height: 120rpx;
+    color: #83868f;
+    flex-shrink: 0;
+}
+
+.inputLabel {
+    color: #10191d;
+    font-weight: 700;
+    font-size: 32rpx;
+    text-align: left;
+    flex-shrink: 0;
+    margin-right: 2rpx;
+}
+
+.one_four_width_label {
+    width: 145rpx!important;
+}
+
+.inputLabel:after {
+    content: "";
+    display: inline-block;
+    width: 150rpx;
+}
+
+.inputLabelView .inputLabel_right {
+    text-align: right;
+}
+
+.unit {
+    color: #8e94a1;
+    font-size: 32rpx;
+    text-align: right;
+    padding-left: 5rpx;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    line-height: 124rpx;
+}
+
+.contentInput .inputViewPicker {
+    padding-right: 0;
+    width: 100%;
+    display: inline-block;
+}
+
+.inputView {
+    height: 40rpx;
+    line-height: 40rpx;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    color: #0c0d0e;
+    width: 80%;
+    border: none;
+    text-align: right;
+    padding: 0;
+    margin: auto 0;
+    display: flex;
+}
+
+.inputView[disabled] {
+    color: #bbb;
+}
+
+.input_placeholder {
+    font-weight: 400;
+    color: #b5bcc1;
+}
+
+.right_arrow_view {
+    flex-shrink: 0;
+    line-height: 120rpx;
+    height: 120rpx;
+}
+
+.right_arrow_img {
+    width: 44rpx;
+    height: 44rpx;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    margin: auto 0 auto auto;
+}
+
+.firstPayVal {
+    text-align: right;
+    height: 100%;
+    color: #0c0d0e;
+    font-size: 32rpx;
+}
+
+.startCalculationView {
+    width: 100%;
+    padding: 24rpx 30rpx 0;
+    box-sizing: border-box;
+}
+
+.calculation_res_tips {
+    color: #8e94a1;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 24rpx;
+}
+
+button.startCalculation {
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background-color: #ff6f2e;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 12rpx;
+    box-sizing: border-box;
+    background: linear-gradient(90deg,#fe8e0d 0,#ff6f2e);
+}
+
+.resultView {
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-bottom: 30rpx;
+}
+
+.result_tab_btn_view {
+    border-radius: 70rpx;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.result_tab_btn_view>.result_tab_btn_active {
+    background-color: #fd8f0c;
+    color: #fff;
+    border: none;
+}
+
+.result_tab_btn {
+    width: 180rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    background-color: #fff;
+    color: #162125;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+button.result_tab_btn_l {
+    border-radius: 70rpx 0 0 70rpx;
+    border-top: 1rpx solid #d8d8d8;
+    border-left: 1rpx solid #d8d8d8;
+    border-bottom: 1rpx solid #d8d8d8;
+}
+
+button.result_tab_btn_r {
+    border-radius: 0 70rpx 70rpx 0;
+    border-top: 1rpx solid #d8d8d8;
+    border-right: 1rpx solid #d8d8d8;
+    border-bottom: 1rpx solid #d8d8d8;
+}
+
+.contentScrollView {
+    padding-bottom: 60rpx;
+}
+
+.resultDesView {
+    color: #b3b6be;
+    font-size: 28rpx;
+    margin-top: 30rpx;
+}
+
+.resultDes {
+    width: 380rpx;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.canvasView {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    position: relative;
+    margin-left: -45rpx;
+    margin-top: 30rpx;
+}
+
+.canvas_title {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    color: #83868f;
+    font-size: 32rpx;
+    text-align: center;
+}
+
+.canvas_val {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    color: #83868f;
+    font-size: 32rpx;
+}
+
+.resultTextCont {
+    margin: 60rpx 0 20rpx 35rpx;
+}
+
+.resultPriceView {
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 32rpx;
+    width: 370rpx;
+    color: #b3b6be;
+}
+
+.resultPriceView .resultPriceLabel_five {
+    width: 175rpx;
+}
+
+.resultPriceView .resultPriceLabel_five:after {
+    content: "";
+    display: inline-block;
+    width: 175rpx;
+}
+
+.resultPriceLabel {
+    text-align: left;
+    flex-shrink: 0;
+    width: 160rpx;
+    font-size: 30rpx;
+    color: #8e94a1;
+}
+
+.resultPriceVal {
+    color: #10191d;
+    font-size: 30rpx;
+    font-weight: 700;
+}
+
+.resultPoint {
+    width: 12rpx;
+    height: 12rpx;
+    box-sizing: border-box;
+    border-radius: 100%;
+    margin: auto 12rpx auto -24rpx;
+}
+
+.resultBottomDes {
+    color: #b3b6be;
+    font-size: 23rpx;
+    width: 100%;
+    text-align: center;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.radioLabel {
+    display: inline-block;
+    margin-right: 50rpx;
+}
+
+.radioLabel:last-child {
+    margin-right: 0;
+}
+
+.radioView {
+    margin: auto 10rpx auto 0;
+    position: relative;
+    top: -3rpx;
+}
+
+.res_cont {
+    padding: 0 40rpx;
+    box-sizing: border-box;
+}
+
+.res_cont_view {
+    padding: 57rpx 36rpx 0;
+    box-sizing: border-box;
+    border-radius: 12rpx;
+    box-shadow: 0rpx 0rpx 10rpx #e6e6e6;
+    overflow: hidden;
+}
+
+.res_cont_title {
+    line-height: 90rpx;
+    box-sizing: border-box;
+    border-top: 1rpx solid #f0f3f5;
+}
+
+.res_cont_title_text {
+    color: #8e94a1;
+    font-size: 28rpx;
+}
+
+.res_cont_title_detail {
+    font-size: 24rpx;
+    color: #7a8190;
+    margin-right: -8rpx;
+}
+
+.first_pay_img {
+    width: 41rpx;
+    height: 31rpx;
+    margin: auto 18rpx;
+    flex-shrink: 0;
+}
+
+.first_pay_des {
+    flex-shrink: 0;
+    color: #8e94a1;
+    font-size: 28rpx;
+    z-index: 9999;
+}
+
+.calculatorToast {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+    z-index: 99999;
+}
+
+.calculator_toast_view {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 50%;
+    background-color: #fff;
+    z-index: 999999;
+    right: 0;
+}
+
+.calculator_toast_title {
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #fff;
+    font-size: 32rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 0 40rpx;
+    display: flex;
+    color: #101d36;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.calculator_picker {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 32rpx;
+    background: #fff;
+    border-color: #ff5400;
+}
+
+.calculator_toast_picker_item {
+    color: #ff5400;
+    height: 50px;
+    line-height: 50px;
+}
+
+.uni-picker-view-indicator {
+    height: 50px!important;
+}
+
+.calculator_toast_item {
+    color: #101d36;
+    font-size: 32rpx;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}

@@ -1,0 +1,11 @@
+<view class="container">
+	<image bindtap="goto" src="{{imgas}}" mode="widthFix"></image>
+	<view class="sell">
+		<image  src="{{imgas}}" mode="widthFix"></image>
+		<button bindtap="sell">我要卖房</button>
+	</view>
+	<view class="buy">
+	<image src="{{imgas}}" mode="widthFix"></image>
+		<button  bindtap="buy" hover-class="none">帮我找房</button>
+	</view>
+</view>

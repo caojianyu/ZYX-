@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+		"filtration":"/components/filtration/filtration",
+		"nearbyNewHouse":"/components/nearbyNewHouse/nearbyNewHouse"
+	},
+	"navigationBarTitleText": "新房"
+}

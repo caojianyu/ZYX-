@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/home/homeSellBuy/homeSellBuy",
+    "pages/home/listSellBuy/listSellBuy",
+    "pages/home/homeGods/homeGods",
+    "pages/home/homeGod/homeGodDetail/homeGodDetail",
+    "pages/home/homeGod/homeGodDetail/homeGodDetail/homeGodDetailOther/homeGodDetailOther",
+    "pages/home/homeGod/homeGodDetail/homeGodDetail/homeGodDetailServe/homeGodDetailServe",
+    "pages/home/homeLeiBo/homeLeiBo",
+    "pages/home/homeLeiBo/personalHousing/personalHousing",
+    "pages/home/homeLeiBo/personalHousing/other/other",
+    "pages/home/homeLeiBo/personalHousing/complain/complain",
+    "pages/home/homeLeiBo/personalHousing/dealDetail/dealDetail",
+    "pages/home/homeWYue/homeWYue",
+    "pages/home/newHouseList/newHouseList",
+    "pages/home/newHouseList/detail/detail",
+    "pages/home/newHouseList/detail/detailInfo/detailInfo",
+    "pages/home/newHouseList/to/to",
+    "pages/publish/publish",
+    "pages/publish/buy/buy",
+    "pages/publish/sell/sell",
+    "pages/publish/sell/detail/detail",
+    "pages/publish/sell/detail/entrust/entrust",
+    "pages/my/my",
+    "pages/my/AboutUs/AboutUs",
+    "pages/my/agreement/agreement",
+    "pages/my/calculate/calculate",
+    "pages/my/attention/attention",
+    "pages/my/calculatorFangDai/calculatorFangDai"
+  ],
+  "tabBar": {
+    "color": "#aaafb8",
+    "selectedColor": "#27bbb2",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/assets/tabbar/home_new.png",
+        "selectedIconPath": "/assets/tabbar/home_new_.png",
+        "selectedColor": "#3fbaa6"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "/assets/tabbar/mine_new.png",
+        "selectedIconPath": "/assets/tabbar/mine_new_.png",
+        "selectedColor": "#3fbaa6"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/assets/tabbar/news_new.png",
+        "selectedIconPath": "/assets/tabbar/news_new_.png",
+        "selectedColor": "#3fbaa6"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "找房上这里",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

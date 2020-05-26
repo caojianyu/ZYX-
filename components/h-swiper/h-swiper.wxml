@@ -1,0 +1,12 @@
+<!-- 插槽嵌套抽取封装，后端关联式使用
+    展示轮播图,预留插槽八卦符里swiperImg占位符字节
+    -->
+<swiper class="swiper" 
+        circular="true" 
+        autoplay="true">
+    <block >
+        <swiper-item class="siper-item" wx:for="{{swiperImg}}" wx:key="index">
+            <image src="{{item.img}}" mode="aspectFill" style="width:100vw;"/>
+        </swiper-item>
+    </block>  
+</swiper> 

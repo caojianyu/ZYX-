@@ -1,0 +1,4 @@
+<view class="container">
+	<text class="text">(图文)</text>
+	<button bindtap="detail" class="btn" hover-class="none">下一步</button>
+</view>

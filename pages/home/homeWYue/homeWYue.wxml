@@ -1,0 +1,22 @@
+<view class="WyCont">
+    <block wx:for="{{WYitemList}}" wx:key="index">
+        <image bindtap="gotoSomething" src="{{item.img}}"/>   
+    </block>
+</view>
+<block wx:for="{{WyitemListItem}}" wx:key="index">
+<view class="WyList clearfix">
+  <view class="left-box clearfix">
+    <view class="logo">{{item.title}}</view>
+    <view class="title">{{item.title01}}</view>
+    <view class="contact" data-phone="{{item.phone}}" >{{item.buttonValue}}</view>
+  </view>
+  <view class="right-box clearfix">
+    <view class="title">{{item.title02}}</view>
+    <view class="item">{{item.title03}}{{item.title04}}</view>
+    <view class="phone">电话：{{item.phone}}</view>
+    <view class="address">地址：{{item.homeDiZ}}</view>
+  </view>
+</view>
+</block>
+
+<view class="bottom-line">更多服务敬请期待</view>

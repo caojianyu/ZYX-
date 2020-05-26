@@ -1,0 +1,119 @@
+<view class="container">
+	<swiper bindtap="previewImage" swiperImg="{{images}}"></swiper>
+	<view class="top">
+		<view class="t2">
+			<view>
+				<text class="icon-fangwu"></text>
+				<text class="main">房主直卖</text>
+			</view>
+			<view class="t">
+				<text class="icon-dui"></text>
+				<text>无中间商</text>
+			</view>
+			<view class="t">
+				<text class="icon-dui"></text>
+				<text>自由交易</text>
+			</view>
+			<view class="t">
+				<text class="icon-dui"></text>
+				<text>无中介费</text>
+			</view>
+		</view>
+	</view>
+	<view class="content">
+		<view class="c1">
+			<view class="l">
+				1室1厅1卫0阳台2000/月正规高性价比
+			</view>
+			<view class="r">
+				<view bindtap="share" class="r1">
+					<text class="icon-fenxiang"></text>
+					<text class="rt1">分享</text>
+					<button class="share" open-type="share"></button>
+				</view>
+				<view bindtap="collect" class="r1 {{collect?'red':''}}">
+					<text class="icon-shoucang1 {{collect?'red':''}}"></text>
+					<text class="rt1 {{collect?'red':''}}">收藏</text>
+				</view>
+			</view>
+		</view>
+		<view bindtap="complain" class="m">
+			<view class="hint">温馨提示</view>
+			<text class="mt">房屋交易属大额交易,存在潜在风险,如遇不实可进入举报入口</text>
+			<text class="icon-you"></text>
+		</view>
+			<view class="pt">
+				<view class="inputItem">
+					<text>110万</text>
+					<text class="c">售价</text>
+				</view>
+				<view class="inputItem be">
+					<text>2室2厅1卫</text>
+					<text class="c">户型</text>
+				</view>
+				<view class="inputItem be">
+					<text>64.96m²</text>
+					<text class="c">面积</text>
+				</view>
+			</view>
+			<view class="m1">
+				最终成交价可与房主商谈，房主报价一般为房屋参考价格
+			</view>
+		<view class="i">
+			<view wx:for="{{houseInfo}}" wx:key="index" class="it">
+				<text>{{item.name}}：</text>
+				<text class="ri">{{item.price}}</text>
+			</view>
+		</view>
+		<image bindtap="deal" class="pc" src="{{imgs}}" mode="aspectFill"></image>
+		<view class="s">
+			<text>房主说:</text>
+			<text>{{msg}}</text>
+		</view>
+		<view class="sd">
+			<image class="{{advertisingImage==''?'hidden':''}}" bindtap="other" src="{{advertisingImage[0]}}" mode="aspectFill"></image>
+		</view>
+		<view class="sd">
+			<image class="{{advertisingImage==''?'hidden':''}}" bindtap="other" src="{{advertisingImage1[0]}}" mode="aspectFill"></image>
+		</view>
+		<view class="side ">位置及周边</view>
+		<map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"></map>
+		<view bindtap="goodHouse" class="side f">
+			<text>优选房源</text>
+			<view class="sideL">
+				<text>查看全部</text>
+				<text class="icon-you"></text>
+			</view>
+		</view>
+		<excellentHouse excellentHouse="{{excellentHouse}}"></excellentHouse>
+		<view bindtap="personal" class="side f">
+			<text>房东直卖</text>
+			<view class="sideL">
+				<text>查看全部</text>
+				<text class="icon-you"></text>
+			</view>
+		</view>
+		<personalHousing personalHousing="{{personalHousing}}"></personalHousing>
+		<view bindtap="newHouse" class="side f">
+			<text>周边新房</text>
+			<view class="sideL">
+				<text>查看全部</text>
+				<text class="icon-you"></text>
+			</view>
+		</view>
+		<nearbyNewHouse nearbyNewHouse="{{nearbyNewHouse}}"></nearbyNewHouse>
+	</view>
+	<view class="g"></view>
+	<view class="footer2 ">
+		<view class="n">
+			<image src="../../../../assets/home/Headportrait/s01.png" mode="aspectFill"></image>
+			<view class="n1">
+				<text>{{info.name}}</text>
+				<text>{{info.type=='0'?"房主":"经纪人"}}</text>
+			</view>
+		</view>
+		<button bindtap="deal" class="btn2">交易服务</button>
+		<button class="btn3" bindgetuserinfo="getuserinfo" open-type="getUserInfo">联系房主</button>
+	</view>
+	
+</view>

@@ -1,0 +1,39 @@
+.top{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 100rpx;
+	color: #333;
+}
+.top image{
+	width: 150rpx;
+	height: 150rpx;
+}
+.top text{
+	margin-top: 10rpx;
+	font-weight: bold;
+}
+.content{
+	width: 80%;
+	margin: auto;
+	font-size: 26rpx;
+	line-height: 43rpx;
+	margin-top: 45rpx;
+	display: block;
+	text-align: justify;
+	color: #333;
+	letter-spacing:1px;
+	font-weight: 600;
+}
+.buttom{ 
+	position: fixed;
+	bottom: 50rpx;
+	font-size: 28rpx;
+	color: #acacac;
+	margin: auto;
+}
+.wrap{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}

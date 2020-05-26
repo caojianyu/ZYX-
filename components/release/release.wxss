@@ -1,0 +1,77 @@
+page{
+	background-color: #f8f8f8;
+}
+.item{
+	margin-top: 15rpx;
+	background-color: #fff;
+}
+.top{
+	display: flex;
+	padding: 30rpx;
+}
+.top image{
+	width: 230rpx;
+	height: 200rpx;
+	margin-right: 20rpx;
+}
+.right{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.middle{
+	display: flex;
+	font-size: 28rpx;
+}
+.title{
+	font-size: 30rpx;
+	font-weight: bold;
+}
+.show{
+	margin-right: 20rpx;
+	color:#6acc1e;
+}
+.num{
+	color: #cc2d18;
+}
+.price{
+	color: #cc2d18;
+	font-size: 38rpx;
+	font-weight: bold;
+}
+.unit{
+	margin-right: 20rpx;
+	font-size: 24rpx !important;
+	color: #cc2d18;
+}
+.type{
+	margin-right: 20rpx;
+}
+.type,
+.unit,
+.area{
+	font-size: 24rpx !important;
+}
+.bottom{
+	display: flex;
+	padding:20rpx 30rpx;
+	border-top: 1rpx solid #ccc;
+	justify-content: flex-end;
+}
+.bottom text{
+	display: block;
+	height: 55rpx;
+	line-height: 55rpx;
+	text-align: center;
+	color: #66cbcc;
+	width: 120rpx;
+	background-color: #f3ffff;
+	margin-left: 20rpx;
+	font-size: 28rpx;
+	border: 1rpx solid #5bccc5;
+	border-radius: 10rpx;
+	padding:0rpx 10rpx;
+}
+.bottom text:active{
+	filter: brightness(90%);
+}

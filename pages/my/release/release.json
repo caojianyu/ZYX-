@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+		"release":"/components/release/release"
+	},
+	"navigationBarTitleText": "我的发布"
+}

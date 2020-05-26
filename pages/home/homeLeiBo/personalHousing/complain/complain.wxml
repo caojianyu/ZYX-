@@ -1,0 +1,14 @@
+<view class="container">
+	<view class="top">
+		请选择举报原因
+	</view>
+	<view class="content">
+			<view  wx:for="{{msg}}"wx:key="index" bindtap="choose" data-index="{{index}}"  class="item {{cueerentChoose==index?'color':''}}">
+			{{item}}
+			<text class="{{cueerentChoose==index?'icon-dui':''}}"></text>
+		</view>
+	</view>
+	<view class="b">
+		<button bindtap="submit" hover-class="none">提交</button>
+	</view>
+</view>

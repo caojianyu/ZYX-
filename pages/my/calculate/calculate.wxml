@@ -1,0 +1,133 @@
+<view class="container">
+	<view class="type ">
+		<text class="item {{isShow==index?'color bold ':''}}" bindtap="calculate" wx:for="{{type}}" wx:key="index" data-index="{{index}}">{{item}}</text>
+	</view>
+	<view class="content">
+
+		<view class="calsulate-item">
+			<text class="side">房屋售价</text>
+			<view class="right">
+				<input bindinput="input" style="{{ageLimitShow?'width:220rpx;':''}}" maxlength="5" type="number" value="{{value}}"
+				 placeholder="{{ageLimitShow?'请输入房屋售价':''}}" class="sellInput" />
+				<text class="m" wx:if="{{!ageLimitShow}}">万</text>
+			</view>
+		</view>
+
+		<view data-index="0" class="calsulate-item">
+			<view class="wrap1">
+				<text class="side">首付{{toggle?'金额':'比例'}}</text>
+				<text class="icon-qiehuan"></text>
+				<text bindtap="toggle" class="toggle">{{toggle?'切换首付比例':' 自定义首付金额'}}</text>
+			</view>
+			<!-- 首付比例 -->
+			<picker style="{{toggle?'display:none;':''}}" class="q" bindchange="change" value="{{index}}" range="{{c}}">
+				<view class="t">{{c[index]}}</view>
+			</picker>
+			<text style="{{toggle?'display:none;':''}}" class="icon-you"></text>
+			<view style="{{toggle?'':'display:none;'}}" class="right">
+				<input bindinput="downPayment" style="{{downPayment?'width:220rpx;':''}}" maxlength="5" type="number" value="{{value1}}"
+				 placeholder="{{downPayment?'请输入首付金额':''}}" class="sellInput" />
+				<text class="m">万</text>
+			</view>
+		</view>
+
+		<view class="calsulate-item">
+			<text class="side">贷款总额</text>
+			<text class="price">{{total}}万</text>
+		</view>
+
+		<!--商业贷款 -->
+		<view style="{{isShow==2?'':'display:none;'}}" bindtap="ageLimit" data-index="1" class="calsulate-item">
+			<text class="side">商业贷款</text>
+			<input placeholder="请输入商业贷款" />
+		</view>
+
+
+		<view bindtap="ageLimit" data-index="1" class="calsulate-item">
+			<text class="side">贷款年限</text>
+			<!--  贷款年限-->
+			<picker bindchange="year" value="{{index}}" range="{{ageLimit}}">
+				<view class="t">{{ageLimit[year]}}</view>
+			</picker>
+			<text class="icon-you"></text>
+		</view>
+
+		<view bindtap="accumulationFund" data-index="2" class="calsulate-item {{isShow==1?'hidden':''}}">
+			<text class="side">公积金利率</text>
+			<!-- 公积金率 -->
+			<picker bindchange="rate" value="{{index}}" range="{{accumulationFund}}">
+				<view class="t">{{accumulationFund[rate]}}</view>
+			</picker>
+			<text class="icon-you"></text>
+		</view>
+
+		<view bindtap="accumulationFund" data-index="2" class="calsulate-item {{isShow!=0?'':'hidden'}}">
+			<text class="side">商贷利率</text>
+			<!-- 公积金率 -->
+			<picker bindchange="rate" value="{{index}}" range="{{accumulationFund}}">
+				<view class="t">{{accumulationFund[rate]}}</view>
+			</picker>
+			<text class="icon-you"></text>
+		</view>
+
+		<view style="{{isShow==2?'':'display:none;'}}" class="calsulate-item">
+			<text class="side">公积金贷款</text>
+			<view class="right">
+				<input bindinput="hous" style="{{hous?'width:220rpx;':''}}" maxlength="5" type="number" value="{{value}}"
+				 placeholder="{{hous?'请输入公积金贷款':''}}" class="sellInput" />
+				<text class="m" wx:if="{{!hous}}">万</text>
+			</view>
+		</view>
+
+	</view>
+	<button bindtap="submit" hover-class="none">开始计算</button>
+	<view class="bottom">此结果仅供参考，实际费用以当地缴费为准</view>
+	
+	<view  wx:if="{{isBootomShow}}" class="result">
+		<view class="bt">
+			<text bindtap="choose" class="{{curentChoose?'active':''}}">等额本息</text>
+			<text bindtap="choose" class="{{!curentChoose?'active':''}}">等额本金</text>
+		</view>
+		<view class="bo">
+    <view class="echart_panel">
+    </view>
+		<view class="box">
+		<ec-canvas ec="{{ec}}"></ec-canvas>
+			</view>
+			<view class="right1">
+				<view class="itemq">
+					<view >房屋售价</view>
+					<text>{{foremData.shoujia}}万</text>
+				</view>
+				<view class="itemq">
+					<view>首付金额</view>
+					<text>{{foremData.shoufubili}}万</text> 
+				</view>
+				<view class="itemq qq">
+					<view>贷款总额</view>
+					<text>{{foremData.daikuanjine}}万</text>
+				</view>
+				<view class="itemq bb">
+					<view>支付利息</view>
+					<text>{{foremData.zhifulixi}}万</text>
+				</view>
+				<view class="itemq">
+					<view>利率</view>
+					<text>{{foremData.lilv}}</text>
+				</view>
+				<view class="itemq">
+					<view>月供</view>
+					<text>{{foremData.yuegong * 10000}}元</text>
+				</view>
+				<view style="{{curentChoose==false?'':'display: none;'}}" class="itemq">
+					<view>每月递减</view>
+					<text>10.2元</text>
+				</view>
+				
+			</view>
+		</view>
+	</view>
+
+
+	
+</view>

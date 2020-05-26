@@ -1,0 +1,127 @@
+.container{
+	padding: 20rpx 40rpx;
+}
+.hidden{
+	display: none;
+}
+.top{
+	width: 100%;
+	display: flex;
+}
+.portrait{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	margin-right: 20rpx;
+}
+.conten1{
+	display: none;
+}
+.circle{
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 20rpx;
+	box-shadow: 0rpx 0rpx 3rpx 3rpx #ccc;
+	border-radius: 50%;
+	transform: rotate(180deg);
+}
+.nickname{
+	display: flex;
+	align-items: center;
+}
+.nickname text{
+	font-size: 30rpx;
+	font-weight: bold;
+}
+.info{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.phone{
+	font-size: 25rpx;
+	color: #b0b0b0;
+}
+.middle{
+	display: flex;
+	justify-content: space-between;
+	margin: 40rpx 0rpx 60rpx;
+}
+.item{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-size: 22rpx;
+}
+.item image{
+	width: 65rpx;
+	height: 60rpx;
+	margin-bottom: 30rpx;
+}
+.sever{
+	font-size: 30rpx;
+	font-weight: bold;
+	margin-top: 100rpx;
+}
+.userSever{
+	display: flex;
+	width: 100%;
+	margin: 40rpx 0rpx 60rpx;
+	justify-content: space-between;
+}
+.userSeverItem{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.userSeverItem image{
+	width: 60rpx;
+	height: 60rpx;
+		margin-bottom: 30rpx;
+}
+.userSeverItem text{
+	font-size: 22rpx;
+}
+.footerTop{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 28rpx;
+}
+.footerTop image{
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+}
+.footer1{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 320rpx;
+	height: 100rpx;
+	background-color: #f4f4f4;
+	border-radius: 20rpx;
+	padding: 20rpx 0rpx;
+}
+.footer{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40rpx;
+}
+.info1{
+	font-size: 22rpx;
+	color: #bababa;
+}
+.login{
+	position: relative;
+}
+.login button{
+	width: 100rpx !important;
+	height: 100rpx !important;
+	position: absolute;
+	z-index: 10;
+	top: 0rpx;
+	opacity: 0;
+}

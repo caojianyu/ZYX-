@@ -1,0 +1,149 @@
+<view class="container">
+	<swiper>
+		<swiper-item wx:for="{{swiperImg}}" wx:key="index">
+			<image data-index="{{index}}" bindtap="previewImage" src="{{item}}"></image>
+		</swiper-item>
+	</swiper>
+	<view class="info">
+		<view class="left">
+			<text class="title">君豪新城</text>
+			<view class="middle">
+				<view class="price">
+					<view><text>{{price}}</text>/m²</view>
+					<text class="average">参考均价</text>
+				</view>
+			</view>
+			<text class="location">{{locations}}</text>
+		</view>
+		<view class="right">
+			<view class="icon">
+				<text class="icon-fenxiang"></text>
+				<text>分享</text>
+				<button class="share" open-type="share"></button>
+			</view>
+			<view bindtap="collect" class="icon">
+				<text style="{{collect?'color:red;':''}}" class="icon-shoucang1"></text>
+				<text style="{{collect?'color:red;':''}}">收藏</text>
+			</view>
+		</view>
+	</view>
+	<view class="side">
+		优惠活动
+	</view>
+	<view class="apply">
+		<view class="left1">
+			<text>看房不打烊，实时了解{{location}}</text>
+			<text>优惠活动提前招募中，抢先报名</text>
+		</view>
+		<button bindtap="apply" class="applyBtn" hover-class="none">立即报名</button>
+	</view>
+
+	<view class="mask" hidden="{{close}}">
+		<view bindtap="close" class="icon-cuo"></view>
+		<view class="wrap3">
+			<view class="t3">
+				<text class="t4">团购报名</text>
+				<text class="info2">请您填写信息，如果有优惠即时通知您</text>
+			</view>
+			<input bindinput="bindinput" data-item="name" bindtap="name" placeholder="请输入您的姓名" value="{{name}}" />
+			<input bindinput="bindinput" data-item="phone" type="number" maxlength="11" placeholder="请输入您的手机号" value="{{phone}}" />
+			<button bindtap="submit" hover-class="none" class="aplly">立即报名</button>
+		</view>
+	</view>
+	<view hidden="{{isMakes}}" class="mask1"></view>
+
+	<image wx:if="advertising==''" bindtap="goTo" class="pictrue" src="{{imgs}}" mode="aspectFill"></image>
+	<view class="side">
+		楼盘信息
+	</view>
+	<view class="houseInfo">
+		<view class="houseInfoItem">
+			<text>预售证</text>
+			<text>{{yushouzheng}}</text>
+		</view>
+		<view class="houseInfoItem">
+			<text>售楼地址</text>
+			<text>{{dizhi}}</text>
+		</view>
+		<view class="houseInfoItem">
+			<text>开发商</text>
+			<text>{{kaifashang}}</text>
+		</view>
+		<view class="houseInfoItem">
+			<text>开盘时间</text>
+			<text>{{shijian}}</text>
+		</view>
+	</view>
+	<button bindtap="detail" class="look" hover-class="none">查看楼盘详细信息</button>
+	<view class="side bold">
+		楼盘图库
+	</view>
+
+	<scroll-view scroll-x="true" id="housePictrue">
+		<view id="housePictrueItem">
+			<image bindtap="priview1" src="{{resultPictrue[0]}}" mode="aspectFill"></image>
+			<view class="bottom1">效果图</view>
+		</view>
+		<view id="housePictrueItem">
+			<image bindtap="priview2" src="{{trafficPictrue[0]}}" mode="aspectFill"></image>
+			<view class="bottom1">交通图</view>
+		</view>
+		<view id="housePictrueItem">
+			<image bindtap="priview3" src="{{housePictrue[0]}}" mode="aspectFill"></image>
+			<view class="bottom1">户型图</view>
+		</view>
+	</scroll-view>
+
+
+
+	<view class="side bold">
+		位置及周边
+	</view>
+	<map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"></map>
+
+	<view class="side rim bold">
+		<text>周边新房</text>
+		<view class="right1">
+			<text>查看全部</text>
+			<text class="icon-you"></text>
+		</view>
+	</view>
+	<!-- 周边新房 -->
+	<view style="padding: 0rpx 40rpx;">
+		<nearbyNewHouse style="margin: auto;" nearbyNewHouse="{{nearbyNewHouse}}"></nearbyNewHouse>
+	</view>
+
+	<view class="side rim bold">
+		<text>优选房源</text>
+		<view class="right1">
+			<text>查看全部</text>
+			<text class="icon-you"></text>
+		</view>
+	</view>
+	<!-- 优选房源 -->
+	<view style="padding: 0rpx 40rpx;">
+		<excellentHouse excellentHouse="{{excellentHouse}}"></excellentHouse>
+	</view>
+	<view class="side rim bold">
+		<text>房主直卖</text>
+		<view class="right1">
+			<text>查看全部</text>
+			<text class="icon-you"></text>
+		</view>
+	</view>
+	<!--房主直卖 -->
+	<view style="padding: 0rpx 40rpx;">
+		<personalHousing personalHousing="{{personalHousing}}"></personalHousing>
+	</view>
+
+	<view class="fictitious"></view>
+	<view class="footer2 ">
+		<view bindtap="attention" class="collect ">
+			<text class="icon-shoucang1 {{attention?'red':''}}"></text>
+			<text style="{{attention?'color:red;':''}}">关注</text>
+		</view>
+		<button bindtap="apply" class="btn2">团购报名</button>
+		<button bindtap="phone" class="btn3">联系售楼处</button>
+	</view>
+
+</view>

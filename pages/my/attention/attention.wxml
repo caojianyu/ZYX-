@@ -1,0 +1,7 @@
+<view class="container">
+	<view class="title">我浏览的房源</view>
+	<view class="time">03月28日</view>
+	<nearbyNewHouse nearbyNewHouse="{{nearbyNewHouse}}"></nearbyNewHouse>
+	<excellentHouse excellentHouse="{{excellentHouse}}"></excellentHouse>
+	<personalHousing personalHousing="{{personalHousing}}"></personalHousing>
+</view>

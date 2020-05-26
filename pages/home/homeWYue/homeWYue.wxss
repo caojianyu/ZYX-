@@ -1,0 +1,104 @@
+/* pages/home/homeWYue/homeWYue.wxss */
+.WyCont{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.WyCont image{
+    border-radius: 10px;
+    width: 90vw;
+    height: 150px;
+    margin: 10px auto;
+}
+.WyList{
+  color: #ffffff;
+  width: 90%;
+  margin: 15px auto;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  background: rgb(63,186, 166);
+  border-radius:10px; 
+}
+.WyList:nth-child(odd){
+  background: #cacaca;
+}
+.WyList:nth-child(odd) .contact{
+  color: #cacaca;
+}
+.left-box{
+  width: 50%;
+  padding-left: 20px;
+  box-sizing: border-box;
+  float: left;
+}
+.right-box{
+  width: 50%;
+  float: left;
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.logo{
+  letter-spacing: 3px;
+  font-size:20px; 
+  font-weight: bold;
+  margin-bottom:5px; 
+}
+.contact{
+  text-align: center;
+  font-size: 14px;
+  color: rgb(63,186, 166);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 5px 0;
+  width: 80%;
+  margin-top: 15px;
+}
+.right-box .title{
+  font-size:12px; 
+}
+.item{
+  font-size:12px; 
+  margin-top: 10px;
+  width: 90%;
+  height: 32px;
+  overflow: hidden;
+}
+.phone{
+  font-size:12px; 
+  margin-top: 10px;
+}
+.address{
+  font-size:12px; 
+  margin-top: 5px;
+  height: 20px;
+}
+.bottom-line{
+  text-align: center;
+  font-size:12px;
+  color: #cacaca; 
+}
+.bottom-line::after{
+  content: '';
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #cacaca;
+  position: absolute;
+  top: 8px;
+  left: 30px;
+}
+
+.bottom-line::before{
+  content: '';
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #cacaca;
+  position: absolute;
+  top: 8px;
+  left: 245px;
+}

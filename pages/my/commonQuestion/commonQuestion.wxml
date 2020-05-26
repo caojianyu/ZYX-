@@ -1,0 +1,14 @@
+<view class="container">
+	<view class="top">
+		常见问题
+	</view>
+	<view class="content">
+		<view wx:for="{{question}}" wx:key="index" class="item">
+			<view bindtap="fold"  data-id='{{index}}' class="item1">
+				<text >{{item.question}}</text>
+				<text  class="icon-you"></text>
+			</view>
+			<view style="{{index==current?'':'display: none;'}}" class="conten1">{{item.answer}}</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,5 @@
+.component{
+	background-color: red;
+	color: white;
+	margin: 10rpx 0rpx;
+}

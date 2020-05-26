@@ -1,0 +1,5 @@
+<swiper>
+		<swiper-item wx:for="{{swiperImg}}" wx:key="index">
+			<image data-index="{{index}}" bindtap="previewImage" src="{{item}}" mode="aspectFill"></image>
+		</swiper-item>
+</swiper>

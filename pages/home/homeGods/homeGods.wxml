@@ -1,0 +1,14 @@
+
+<view class="contser">
+    <view class="sds1" hover-class="none" hover-stop-propagation="false">
+        <image class="" 
+        mode="widthFix" 
+        style="width:100%;height:100%;background-color:black;"
+         src="{{img}}">    
+        </image>
+    </view>
+     <view class="ds" >
+        <button bindtap = "gotoHome" class="button01" type="primary" style="width:85%">返回</button> 
+    </view>
+</view>
+   

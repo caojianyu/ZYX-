@@ -1,0 +1,14 @@
+<view class="SellConent">
+    <view class="Sell-item">
+        <image class=""
+         mode="widthFix"
+         style="width:100%;height:100%;background-color:black;"
+         src="../../../assets/home/homeGods/04.jpg">     
+        </image>
+    </view> 
+    <view class="buttom-item">
+        <button class="bu1" type="primary" style="width:40%">我要买房</button>
+        <button class="bu2" type="primary" style="width:40%;background:#0da7ce">我要买房</button>
+    </view>
+</view>
+

@@ -1,0 +1,134 @@
+<view class="container">
+	<swiper class="t1" bindtap="previewImage" swiperImg="{{images}}"></swiper>
+	<view class="top">
+		<view class="t2">
+			<view>
+				<text class="icon-fangwu"></text>
+				<text class="main">优选好房</text>
+			</view>
+			<view class="t">
+				<text class="icon-dui"></text>
+				<text>实地查验</text>
+			</view>
+			<view class="t">
+				<text class="icon-dui"></text>
+				<text>高性价比</text>
+			</view>
+			<view class="t">
+				<text class="icon-dui"></text>
+				<text>交易保障</text>
+			</view>
+		</view>
+	</view>
+	<view class="content">
+		<view class="c1">
+			<view class="l">
+				1室1厅1卫0阳台2000/月正规高性价比
+			</view>
+			<view class="r">
+				<view class="r1">
+					<text class="icon-fenxiang"></text>
+					<text class="rt1">分享</text>
+					<button class="share" open-type="share"></button>
+				</view>
+				<view bindtap="collect" class="r1">
+					<text class="icon-shoucang1 {{collect?'red':''}}"></text>
+					<text class="rt1 {{collect?'red':''}}">收藏</text>
+				</view>
+			</view>
+		</view>
+		<view class="pt">
+			<view class="inputItem">
+				<text>110万</text>
+				<text class="c">售价</text>
+			</view>
+			<view class="inputItem be">
+				<text>2室2厅1卫</text>
+				<text class="c">户型</text>
+			</view>
+			<view class="inputItem be">
+				<text>64.96m²</text>
+				<text class="c">面积</text>
+			</view>
+		</view>
+		<view class="i">
+			<view wx:for="{{houseInfo}}" wx:key="index" class="it">
+				<text>{{item.name}}：</text>
+				<text>{{item.price}}</text>
+			</view>
+		</view>
+		<view class="side tp">
+			<text>服务保障</text>
+			<text>服务费不超过差价9%，欢迎联系咨询</text>
+		</view>
+		<image bindtap="serve" class="pc1" src="{{images1}}" mode="widthFix"></image>
+		<view class="side">服务顾问</view>
+
+		<view class="ml">
+			<image src="{{info.img}}" mode="widthFix"></image>
+			<view class="center">
+				<view class="ct">
+					<text class="icon-huizhang"></text>
+					<text>{{info.name}}</text>
+				</view>
+				<text class="info">本人专注服务于该小区，24欢迎来电</text>
+			</view>
+			<view bindtap="call" class="r2">
+				<view class="cs">
+					<text class="icon-xinxi"></text>
+				</view>
+				<text class="ct1">联系</text>
+			</view>
+		</view>
+		<view class="side">房源描述</view>
+		<view class="sideInfo">{{msg}}</view>
+		<view class="side">实勘详情</view>
+		<view class="i1">
+			<view wx:for="{{observe}}" wx:key="index" class="w">
+				<text>{{item.name}}：</text>
+				<text>{{item.price}}</text>
+			</view>
+		</view>
+		<image class="sd" bindtap="other" src="../../../../assets/home/Commission.png" mode="aspectFill"></image>
+		<image class="sd" bindtap="other" src="../../../../assets/home/Commission.png" mode="aspectFill"></image>
+
+		<view bindtap="goodHouse" class="side1 f">
+			<text class="title">优选房源</text>
+			<view class="sideL">
+				<text>查看全部</text>
+				<text class="icon-you"></text>
+			</view>
+		</view>
+		<excellentHouse excellentHouse="{{excellentHouse}}"></excellentHouse>
+
+		<view  bindtap="personal" class="side1 f">
+			<text class="title">房源直卖</text>
+			<view class="sideL">
+				<text>查看全部</text>
+				<text class="icon-you"></text>
+			</view>
+		</view>
+		<personalHousing personalHousing="{{personalHousing}}"></personalHousing>
+
+		<view  bindtap="newHouse" class="side1 f">
+			<text class="title">周边新房</text>
+			<view class="sideL">
+				<text>查看全部</text>
+				<text class="icon-you"></text>
+			</view>
+		</view>
+		<nearbyNewHouse nearbyNewHouse="{{nearbyNewHouse}}"></nearbyNewHouse>
+	</view>
+	<view class="g"></view>
+	<view class="footer2 ">
+		<view class="n">
+			<image src="{{info.img}}" mode="aspectFill"></image>
+			<view class="n1">
+				<text>{{info.name}}</text>
+				<text>服务顾问</text>
+			</view>
+		</view>
+		<button bindtap="serve" class="btn2">交易服务</button>
+		<button class="btn3" bindtap="call">预约看房</button>
+	</view>
+</view>

@@ -1,0 +1,73 @@
+<!--轮播图组件-->
+<h-swiper swiperImg="{{swiperImg}}"/>
+<!--输入框 绝对定位-->
+	<view class="swiper-input">
+	    <input class="input-item" placeholder="你想住在哪里?" type="text" ></input>
+	    <icon type="search" class="search-icon" size="50rpx"></icon>
+	</view>
+
+ 
+<!--房主直卖-->
+<view class='bow'>
+    <block wx:for="{{maifangImg}}" wx:key="index">
+        <view class="bow-item" bindtap="gotoSelf" hover-class="none" hover-stop-propagation="false" data-index="{{index}}">
+            <view><image class="bow-image" src="{{item.img}}"/></view> 
+            <view>{{item.title}}</view>
+        </view>
+    </block>
+</view>
+
+<!--免注册,静态资源,路由跳转事件gotoSellBuy,路由压栈-->
+<view class='fist' bindtap="gotoSellBuy">
+       <image class="" src="{{img[0]}}" 
+       style="width:90%;height:179rpx;" mode="widthFix"/>    
+</view>   
+
+<!--热门活动-->
+<view class="commission">
+<view class='commission-title'>热门活动</view>
+  <view class='commission-image' bindtap="gotoGods">
+			<image src="{{img[1]}}" mode="widthFix"/>
+  </view>
+</view>
+
+<!--房主直卖-->
+<home-List-Item homeListItem="{{homeListItemFd}}"homeFeuer="{{homeFeuerFd}}"/>
+
+<!--优选精品-->
+<view class="commission">
+<view class='commission-title'>优选精品</view>
+  <view class='commission-image' bindtap="gotoGods">
+          <image src="/assets/home/homeListItem/123.jpg" />
+  </view>
+</view>
+
+<!--优选二手房-->
+<home-god homeListItem="{{homeListItemYx}}"homeFeuer="{{homeFeuerYx}}"/>
+
+<!--精选新房-->
+<home-god-list/>
+
+<!--客服-->
+<view class="keHu-item">
+    <block wx:for="{{KeHuItme}}" wx:key="index" class="default" size="default" type="default" >   
+    <view class="KeHuList">
+        <view  bindtap = "gotoWyue" class="ke1">
+        <!-- <image src="{{item.img}}"/> -->
+        <text>{{item.title}}</text>
+        </view>
+				
+        <view  bindtap = "phone" class="ke2">
+            <text>{{item.txt}}</text>
+        </view>
+				
+    </view>
+    </block>
+</view>
+  
+
+  
+  
+
+  
+  

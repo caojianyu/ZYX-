@@ -1,0 +1,21 @@
+.buttom-item{
+  overflow: hidden;
+    display: flex;
+    width: 320px;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 100vw;
+    margin-top: -4px;
+}
+ .bu1 , .bu2{
+    flex: 1 !important;
+    text-align: center;
+    height: 50px;
+    background: #ffbc39 !important;
+    width: 50vw !important;
+    padding-bottom:10px; 
+    border-radius: 0 !important;
+ }
+.bu2{
+    background: #3fbaa6 !important;
+}

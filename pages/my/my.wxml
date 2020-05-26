@@ -1,0 +1,69 @@
+<view class="container">
+	<view class="top">
+		<view class="login">
+			<image class="portrait" src="../../assets/home/Headportrait/s01.png"></image>
+			<button bindgetuserinfo="getuserinfo" open-type="getUserInfo"></button>
+		</view>
+		<view class="info">
+			<view class="nickname">
+				<text>浩海星空</text>
+				<image bindtap="rotate" animation="{{animationData}}" class="circle}}" src="../../assets/my/circle.png"></image>
+			</view>
+			<text class="phone">绑定电话号码</text>
+		</view>
+	</view>
+	<view class="middle">
+		<view bindtap="buy" class="item">
+			<image src="../../assets/my/menu2.png"></image>
+			<text>买房委托</text>
+		</view>
+		<view bindtap="release" class="item">
+			<image src="../../assets/my/menu1.png"></image>
+			<text>卖房委托</text>
+		</view>
+		<view bindtap="question" class="item">
+			<image src="../../assets/my/menu4.png"></image>
+			<text>常见问题</text>
+		</view>
+		<view bindtap="attention" class="item">
+			<image src="../../assets/my/menu3.png"></image>
+			<text>关注/收藏</text>
+		</view>
+	</view>
+	<view class="sever">用户服务</view>
+	<view class="userSever">
+		<view bindtap="calculate" class="userSeverItem">
+			<image src="../../assets/my/sever3.png"></image>
+			<text>房贷计算</text>
+		</view>
+		<view bindtap="agreement" class="userSeverItem">
+			<image src="../../assets/my/sever1.png"></image>
+			<text>用户协议</text>
+		</view>
+		<view bindtap="AboutUs" class="userSeverItem">
+			<image src="../../assets/my/sever2.png"></image>
+			<text>关于我们</text>
+		</view>
+		<view class="userSeverItem">
+			<image src=""></image>
+			<text></text>
+		</view>
+	</view>
+	<view class="sever">我的客服</view>
+	<view class="footer">
+		<view bindtap="goto" class="footer1">
+			<view class="footerTop">
+				<image src="../../assets/my/sever4.png"></image>
+				<text>签约服务网点</text>
+			</view>
+			<text class="info1">一触即达，分分钟解决您的疑问</text>
+		</view>
+		<view bindtap="phone" class="footer1">
+			<view class="footerTop">
+				<image src="../../assets/my/sever5.png"></image>
+				<text>客服电话</text>
+			</view>
+			<text class="info1">400-890-8890</text>
+		</view>
+	</view>
+</view>

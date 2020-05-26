@@ -1,0 +1,536 @@
+<view>
+    <scroll-view scrollWithAnimation scrollX class="g-top-scroll-tab">
+        <button bindtap="__e" class="f-top-btn" data-event-opts="{{[ [ 'tap',[ [ 'changeTopBar',['$0'],[ [ ['topTab','',index,'index'] ] ] ] ] ] ]}}" hoverClass="none" style="{{'width:'+item.width+';'}}" wx:for="{{topTab}}" wx:key="index">
+            <text class="{{['f-top-btn-text',item.index===topTabCurrentIndex?'f-top-btn-active':'']}}">{{item.text}}</text>
+        </button>
+    </scroll-view>
+    <view class="contentScrollView">
+        <view hidden="{{!(topTabCurrentIndex==0)}}">
+            <view class="contentInfoView">
+                <view class="contentView">
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowStart inputLabelView">
+                            <view class="inputLabel">房屋售价</view>
+                        </view>
+                        <view class="flexRowEnd" style="width:100%;">
+                            <input bindinput="__e" class="inputView" data-event-opts="{{[ [ 'input',[ [ 'totalPriceInputChange',['$event'] ] ] ] ]}}" maxlength="4" placeholder="请输入房屋售价" placeholderClass="input_placeholder" type="number" value="{{formData[topTabCurrentIndex].totalPrice}}"></input>
+                            <view class="unit" wx:if="{{formData[topTabCurrentIndex].totalPrice}}">万</view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="flexRowSpaceBetween">
+                                <view bindtap="__e" class="inputLabel one_four_width_label" data-event-opts="{{[ [ 'tap',[ [ 'changeFirstPayType',['$event'] ] ] ] ]}}">{{firstPayTextMap[firstPayTextMapIndex].title}}</view>
+                                <view bindtap="__e" class="flexRowStart" data-event-opts="{{[ [ 'tap',[ [ 'changeFirstPayType',['$event'] ] ] ] ]}}">
+                                    <image class="first_pay_img" src="http://cdn.haofang.net/static/kdbweb/zdzfminiapp/zdzfPlatform/newUiStyle/btn_bili.png"></image>
+                                    <view class="first_pay_des">{{firstPayTextMap[firstPayTextMapIndex].des}}</view>
+                                </view>
+                            </view>
+                            <view class="flexRowEnd" wx:if="{{firstPayTextMapIndex==2}}">
+                                <input bindinput="__e" class="inputView" data-event-opts="{{[ [ 'input',[ [ 'firstPayPriceInputChange',['$event'] ] ] ] ]}}" maxlength="4" placeholder="请输入首付金额" placeholderClass="input_placeholder" type="number" value="{{firstPayPriceNumber}}"></input>
+                                <view class="unit" wx:if="{{firstPayPriceNumber}}">万</view>
+                            </view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['firstPayToastViewShow'] ] ] ] ]}}" wx:if="{{firstPayTextMapIndex==1}}">
+                                <view class="flexRowStart firstPayVal">{{firstPayVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowStart inputLabelView">
+                            <view class="inputLabel">贷款总额</view>
+                        </view>
+                        <view class="flexRowEnd">
+                            <input class="inputView" disabled="true" maxlength="4" placeholder="请输入贷款总额" placeholderClass="input_placeholder" type="number" value="{{formData[topTabCurrentIndex].daiKuanPrice}}"></input>
+                            <view class="unit" wx:if="{{formData[topTabCurrentIndex].daiKuanPrice}}">万</view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="inputLabel">贷款年限</view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['yearNumToastViewShow'] ] ] ] ]}}">
+                                <view class="flexRowStart firstPayVal">{{yearNumVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="inputLabel">商贷利率</view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['businessLiLvToastViewShow'] ] ] ] ]}}">
+                                <view class="flexRowStart firstPayVal">{{businessLiLvVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="startCalculationView">
+                    <button bindtap="__e" class="startCalculation global-confirm-btn" data-event-opts="{{[ [ 'tap',[ [ 'startCalculation',['$event'] ] ] ] ]}}" hoverClass="hoverClass">开始计算</button>
+                    <view class="calculation_res_tips">此结果仅供参考，实际费用以当地缴费为准</view>
+                </view>
+            </view>
+            <view class="resultView" hidden="{{!startCalculatorMap[topTabCurrentIndex]}}">
+                <view class="res_cont">
+                    <view class="res_cont_view">
+                        <view class="flexRowCenter">
+                            <view class="result_tab_btn_view flexRowCenter">
+                                <button bindtap="__e" class="{{['result_tab_btn_l result_tab_btn',resultTabCurrentType==1?'result_tab_btn_active global-confirm-btn':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'resultTabChange',[1] ] ] ] ]}}" hoverClass="hoverClass">等额本息</button>
+                                <button bindtap="__e" class="{{['result_tab_btn_r result_tab_btn',resultTabCurrentType==2?'result_tab_btn_active global-confirm-btn':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'resultTabChange',[2] ] ] ] ]}}" hoverClass="hoverClass">等额本金</button>
+                            </view>
+                        </view>
+                        <view class="flexRowStart">
+                            <canvas canvasId="pieChartId" class="canvasView" height="150" hidden="{{!(!firstPayToastViewShow&&!yearNumToastViewShow&&!businessLiLvToastViewShow&&!commonLiLvToastViewShow)}}" width="150"></canvas>
+                            <view class="resultTextCont">
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">房屋售价</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].totalPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">首付金额</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].firstPayPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="resultPoint" style="background:#5da8fe;"></view>
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">贷款总额</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].daiKuanPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="resultPoint" style="background:#f6cf41;"></view>
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">支付利息</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].liXiPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">利率</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].business_liLv+'%'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">月供</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].monthPrice+'元'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter" hidden="{{!(resultTabCurrentType==2)}}">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">每月递减</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].monthLessPrice+'元'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view hidden="{{!(topTabCurrentIndex==1)}}">
+            <view class="contentInfoView">
+                <view class="contentView">
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowStart inputLabelView">
+                            <view class="inputLabel">房屋售价</view>
+                        </view>
+                        <view class="flexRowEnd" style="width:100%;">
+                            <input bindinput="__e" class="inputView" data-event-opts="{{[ [ 'input',[ [ 'totalPriceInputChange',['$event'] ] ] ] ]}}" maxlength="4" placeholder="请输入房屋售价" placeholderClass="input_placeholder" type="number" value="{{formData[topTabCurrentIndex].totalPrice}}"></input>
+                            <view class="unit" wx:if="{{formData[topTabCurrentIndex].totalPrice}}">万</view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="flexRowStart">
+                                <view bindtap="__e" class="inputLabel one_four_width_label" data-event-opts="{{[ [ 'tap',[ [ 'changeFirstPayType',['$event'] ] ] ] ]}}">{{firstPayTextMap[firstPayTextMapIndex].title}}</view>
+                                <view bindtap="__e" class="flexRowStart" data-event-opts="{{[ [ 'tap',[ [ 'changeFirstPayType',['$event'] ] ] ] ]}}">
+                                    <image class="first_pay_img" src="http://cdn.haofang.net/static/kdbweb/zdzfminiapp/zdzfPlatform/newUiStyle/btn_bili.png"></image>
+                                    <view class="first_pay_des">{{firstPayTextMap[firstPayTextMapIndex].des}}</view>
+                                </view>
+                            </view>
+                            <view class="flexRowEnd" wx:if="{{firstPayTextMapIndex==2}}">
+                                <input bindinput="__e" class="inputView" data-event-opts="{{[ [ 'input',[ [ 'firstPayPriceInputChange',['$event'] ] ] ] ]}}" maxlength="4" placeholder="请输入首付金额" placeholderClass="input_placeholder" type="number" value="{{firstPayPriceNumber}}"></input>
+                                <view class="unit" wx:if="{{firstPayPriceNumber}}">万</view>
+                            </view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['firstPayToastViewShow'] ] ] ] ]}}" wx:if="{{firstPayTextMapIndex==1}}">
+                                <view class="flexRowStart firstPayVal">{{firstPayVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowStart inputLabelView">
+                            <view class="inputLabel">贷款总额</view>
+                        </view>
+                        <view class="flexRowEnd">
+                            <input class="inputView" disabled="true" maxlength="4" placeholder="请输入贷款总额" placeholderClass="input_placeholder" type="number" value="{{formData[topTabCurrentIndex].daiKuanPrice}}"></input>
+                            <view class="unit" wx:if="{{formData[topTabCurrentIndex].daiKuanPrice}}">万</view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="inputLabel">贷款年限</view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['yearNumToastViewShow'] ] ] ] ]}}">
+                                <view class="flexRowStart firstPayVal">{{yearNumVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="inputLabel">公积金利率</view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['commonLiLvToastViewShow'] ] ] ] ]}}">
+                                <view class="flexRowStart firstPayVal">{{commonLiLvVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="startCalculationView">
+                    <button bindtap="__e" class="startCalculation global-confirm-btn" data-event-opts="{{[ [ 'tap',[ [ 'startCalculation',['$event'] ] ] ] ]}}" hoverClass="hoverClass">开始计算</button>
+                    <view class="calculation_res_tips">此结果仅供参考，实际费用以当地缴费为准</view>
+                </view>
+            </view>
+            <view class="resultView" hidden="{{!startCalculatorMap[topTabCurrentIndex]}}">
+                <view class="res_cont">
+                    <view class="res_cont_view">
+                        <view class="flexRowCenter">
+                            <view class="result_tab_btn_view flexRowCenter">
+                                <button bindtap="__e" class="{{['result_tab_btn_l result_tab_btn',resultTabCurrentType==1?'result_tab_btn_active global-confirm-btn':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'resultTabChange',[1] ] ] ] ]}}" hoverClass="hoverClass">等额本息</button>
+                                <button bindtap="__e" class="{{['result_tab_btn_r result_tab_btn',resultTabCurrentType==2?'result_tab_btn_active global-confirm-btn':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'resultTabChange',[2] ] ] ] ]}}" hoverClass="hoverClass">等额本金</button>
+                            </view>
+                        </view>
+                        <view class="flexRowStart">
+                            <canvas canvasId="common_pieChartId" class="canvasView" height="150" hidden="{{!(!firstPayToastViewShow&&!yearNumToastViewShow&&!businessLiLvToastViewShow&&!commonLiLvToastViewShow)}}" width="150"></canvas>
+                            <view class="resultTextCont">
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">房屋售价</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].totalPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">首付金额</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].firstPayPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="resultPoint" style="background:#5da8fe;"></view>
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">贷款总额</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].daiKuanPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="resultPoint" style="background:#f6cf41;"></view>
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">支付利息</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].liXiPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">利率</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].common_liLv+'%'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">月供</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].monthPrice+'元'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter" hidden="{{!(resultTabCurrentType==2)}}">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel">每月递减</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].monthLessPrice+'元'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view hidden="{{!(topTabCurrentIndex==2)}}">
+            <view class="contentInfoView">
+                <view class="contentView">
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowStart inputLabelView">
+                            <view class="inputLabel_right inputLabel_five inputLabel">房屋售价</view>
+                        </view>
+                        <view class="flexRowEnd" style="width:100%;">
+                            <input bindinput="__e" class="inputView" data-event-opts="{{[ [ 'input',[ [ 'totalPriceInputChange',['$event'] ] ] ] ]}}" maxlength="4" placeholder="请输入房屋售价" placeholderClass="input_placeholder" type="number" value="{{formData[topTabCurrentIndex].totalPrice}}"></input>
+                            <view class="unit" wx:if="{{formData[topTabCurrentIndex].totalPrice}}">万</view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="flexRowStart">
+                                <view bindtap="__e" class="inputLabel one_four_width_label" data-event-opts="{{[ [ 'tap',[ [ 'changeFirstPayType',['$event'] ] ] ] ]}}">{{firstPayTextMap[firstPayTextMapIndex].title}}</view>
+                                <view bindtap="__e" class="flexRowStart" data-event-opts="{{[ [ 'tap',[ [ 'changeFirstPayType',['$event'] ] ] ] ]}}">
+                                    <image class="first_pay_img" src="http://cdn.haofang.net/static/kdbweb/zdzfminiapp/zdzfPlatform/newUiStyle/btn_bili.png"></image>
+                                    <view class="first_pay_des">{{firstPayTextMap[firstPayTextMapIndex].des}}</view>
+                                </view>
+                            </view>
+                            <view class="flexRowEnd" wx:if="{{firstPayTextMapIndex==2}}">
+                                <input bindinput="__e" class="inputView" data-event-opts="{{[ [ 'input',[ [ 'firstPayPriceInputChange',['$event'] ] ] ] ]}}" maxlength="4" placeholder="请输入首付金额" placeholderClass="input_placeholder" type="number" value="{{firstPayPriceNumber}}"></input>
+                                <view class="unit" wx:if="{{firstPayPriceNumber}}">万</view>
+                            </view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['firstPayToastViewShow'] ] ] ] ]}}" wx:if="{{firstPayTextMapIndex==1}}">
+                                <view class="flexRowStart firstPayVal">{{firstPayVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowStart inputLabelView">
+                            <view class="inputLabel_right inputLabel_five inputLabel">贷款总额</view>
+                        </view>
+                        <view class="flexRowEnd" style="width:100%;">
+                            <input class="inputView" disabled="true" maxlength="4" placeholder="请输入贷款总额" placeholderClass="input_placeholder" type="number" value="{{formData[topTabCurrentIndex].daiKuanPrice}}"></input>
+                            <view class="unit" wx:if="{{formData[topTabCurrentIndex].daiKuanPrice}}">万</view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowStart inputLabelView">
+                            <view class="inputLabel_right inputLabel_five inputLabel">商业贷款</view>
+                        </view>
+                        <view class="flexRowEnd" style="width:100%;">
+                            <input bindinput="__e" class="inputView" data-event-opts="{{[ [ 'input',[ [ 'groupBusinessInputChange',['$event'] ] ] ] ]}}" maxlength="4" placeholder="请输入商业贷款" placeholderClass="input_placeholder" type="number" value="{{formData[topTabCurrentIndex].businessPrice}}"></input>
+                            <view class="unit" wx:if="{{formData[topTabCurrentIndex].businessPrice}}">万</view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="inputLabel_five inputLabel">商贷利率</view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['businessLiLvToastViewShow'] ] ] ] ]}}">
+                                <view class="flexRowStart firstPayVal">{{businessLiLvVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowStart inputLabelView">
+                            <view class="inputLabel_five inputLabel">公积金贷款</view>
+                        </view>
+                        <view class="flexRowEnd" style="width:100%;">
+                            <input bindinput="__e" class="inputView" data-event-opts="{{[ [ 'input',[ [ 'groupCommonInputChange',['$event'] ] ] ] ]}}" maxlength="4" placeholder="请输入公积金贷款" placeholderClass="input_placeholder" type="number" value="{{formData[topTabCurrentIndex].commonPrice}}"></input>
+                            <view class="unit" wx:if="{{formData[topTabCurrentIndex].commonPrice}}">万</view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="inputLabel_five inputLabel">公积金利率</view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['commonLiLvToastViewShow'] ] ] ] ]}}">
+                                <view class="flexRowStart firstPayVal">{{commonLiLvVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flexRowSpaceBetween contentInput">
+                        <view class="flexRowSpaceBetween inputLabelView" style="width:100%;">
+                            <view class="inputLabel_right inputLabel_five inputLabel">贷款年限</view>
+                            <view bindtap="__e" class="flexRowEnd" data-event-opts="{{[ [ 'tap',[ [ 'showToast',['yearNumToastViewShow'] ] ] ] ]}}">
+                                <view class="flexRowStart firstPayVal">{{yearNumVal}}</view>
+                                <view class="right_arrow_view flexColumnCenter">
+                                    <image class="right_arrow_img" src="{{rightArrow}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="startCalculationView">
+                    <button bindtap="__e" class="startCalculation global-confirm-btn" data-event-opts="{{[ [ 'tap',[ [ 'startCalculation',['$event'] ] ] ] ]}}" hoverClass="hoverClass">开始计算</button>
+                    <view class="calculation_res_tips">此结果仅供参考，实际费用以当地缴费为准</view>
+                </view>
+            </view>
+            <view class="resultView" hidden="{{!startCalculatorMap[topTabCurrentIndex]}}">
+                <view class="res_cont">
+                    <view class="res_cont_view">
+                        <view class="flexRowCenter">
+                            <view class="result_tab_btn_view flexRowCenter">
+                                <button bindtap="__e" class="{{['result_tab_btn_l result_tab_btn',resultTabCurrentType==1?'result_tab_btn_active global-confirm-btn':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'resultTabChange',[1] ] ] ] ]}}" hoverClass="hoverClass">等额本息</button>
+                                <button bindtap="__e" class="{{['result_tab_btn_r result_tab_btn',resultTabCurrentType==2?'result_tab_btn_active global-confirm-btn':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'resultTabChange',[2] ] ] ] ]}}" hoverClass="hoverClass">等额本金</button>
+                            </view>
+                        </view>
+                        <view class="flexRowStart">
+                            <canvas canvasId="group_pieChartId" class="canvasView" height="150" hidden="{{!(!firstPayToastViewShow&&!yearNumToastViewShow&&!businessLiLvToastViewShow&&!commonLiLvToastViewShow)}}" width="150"></canvas>
+                            <view class="resultTextCont">
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel_five resultPriceLabel">房屋售价</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].totalPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel_five resultPriceLabel">首付金额</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].firstPayPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="resultPoint" style="background:#5da8fe;"></view>
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel_five resultPriceLabel">贷款总额</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].daiKuanPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="resultPoint" style="background:#f6cf41;"></view>
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel_five resultPriceLabel">支付利息</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].liXiPrice+'万'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel_five resultPriceLabel">商贷利率</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].business_liLv+'%'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel_five resultPriceLabel">公积金利率</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].common_liLv+'%'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel_five resultPriceLabel">月供</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].monthPrice+'元'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flexRowCenter" hidden="{{!(resultTabCurrentType==2)}}">
+                                    <view class="flexRowSpaceBetween resultPriceView">
+                                        <view class="flexRowStart">
+                                            <view class="resultPriceLabel_five resultPriceLabel">每月递减</view>
+                                            <view class="resultPriceVal">{{formData[topTabCurrentIndex].monthLessPrice+'元'}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="calculatorToast" data-event-opts="{{[ [ 'tap',[ [ 'cancelToast',['firstPayToastViewShow'] ] ] ] ]}}" wx:if="{{firstPayToastViewShow}}">
+        <view class="calculator_toast_view">
+            <view class="calculator_toast_title">
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'cancelToast',['firstPayToastViewShow'] ] ] ] ]}}">取消</view>
+                <view bindtap="__e" class="calculator_toast_confirm global-font-color" data-event-opts="{{[ [ 'tap',[ [ 'confirmToast',['firstPayToastViewShow'] ] ] ] ]}}">确定</view>
+            </view>
+            <picker-view bindchange="__e" class="calculator_picker" data-event-opts="{{[ [ 'change',[ [ 'toastPickerChange',['$event'] ] ] ] ]}}" indicatorClass="calculator_toast_picker_item" indicatorStyle="height: 50px;" value="{{[firstPickerIndex]}}">
+                <picker-view-column>
+                    <view class="calculator_toast_item" wx:for="{{firstPayPickerArr}}" wx:key="index">{{item.text}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+    <view bindtap="__e" class="calculatorToast" data-event-opts="{{[ [ 'tap',[ [ 'cancelToast',['yearNumToastViewShow'] ] ] ] ]}}" wx:if="{{yearNumToastViewShow}}">
+        <view class="calculator_toast_view">
+            <view class="calculator_toast_title">
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'cancelToast',['yearNumToastViewShow'] ] ] ] ]}}">取消</view>
+                <view bindtap="__e" class="calculator_toast_confirm global-font-color" data-event-opts="{{[ [ 'tap',[ [ 'confirmToast',['yearNumToastViewShow'] ] ] ] ]}}">确定</view>
+            </view>
+            <picker-view bindchange="__e" class="calculator_picker" data-event-opts="{{[ [ 'change',[ [ 'toastPickerChange',['$event'] ] ] ] ]}}" indicatorClass="calculator_toast_picker_item" indicatorStyle="height: 50px;" value="{{[yearNumIndex]}}">
+                <picker-view-column>
+                    <view class="calculator_toast_item" wx:for="{{yearNumPickerArr}}" wx:key="index">{{item.text}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+    <view bindtap="__e" class="calculatorToast" data-event-opts="{{[ [ 'tap',[ [ 'cancelToast',['businessLiLvToastViewShow'] ] ] ] ]}}" wx:if="{{businessLiLvToastViewShow}}">
+        <view class="calculator_toast_view">
+            <view class="calculator_toast_title">
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'cancelToast',['businessLiLvToastViewShow'] ] ] ] ]}}">取消</view>
+                <view bindtap="__e" class="calculator_toast_confirm global-font-color" data-event-opts="{{[ [ 'tap',[ [ 'confirmToast',['businessLiLvToastViewShow'] ] ] ] ]}}">确定</view>
+            </view>
+            <picker-view bindchange="__e" class="calculator_picker" data-event-opts="{{[ [ 'change',[ [ 'toastPickerChange',['$event'] ] ] ] ]}}" indicatorClass="calculator_toast_picker_item" indicatorStyle="height: 50px;" value="{{[businessLiLvIndex]}}">
+                <picker-view-column>
+                    <view class="calculator_toast_item" wx:for="{{liLvPickerArr}}" wx:key="index">{{item.text}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+    <view bindtap="__e" class="calculatorToast" data-event-opts="{{[ [ 'tap',[ [ 'cancelToast',['commonLiLvToastViewShow'] ] ] ] ]}}" wx:if="{{commonLiLvToastViewShow}}">
+        <view class="calculator_toast_view">
+            <view class="calculator_toast_title">
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'cancelToast',['commonLiLvToastViewShow'] ] ] ] ]}}">取消</view>
+                <view bindtap="__e" class="calculator_toast_confirm global-font-color" data-event-opts="{{[ [ 'tap',[ [ 'confirmToast',['commonLiLvToastViewShow'] ] ] ] ]}}">确定</view>
+            </view>
+            <picker-view bindchange="__e" class="calculator_picker" data-event-opts="{{[ [ 'change',[ [ 'toastPickerChange',['$event'] ] ] ] ]}}" indicatorClass="calculator_toast_picker_item" indicatorStyle="height: 50px;" value="{{[commonLiLvIndex]}}">
+                <picker-view-column>
+                    <view class="calculator_toast_item" wx:for="{{liLvPickerArr}}" wx:key="index">{{item.text}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+</view>
