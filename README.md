@@ -14,10 +14,11 @@ example-img是示例图片存放文件夹，可直接删除
 | <img src="./example-img/pay/weichat.png" width="200" /> | <img src="./example-img/pay/alipay.png" width="200" /> |
 
 
+
 ## 相关截图
 
 |                        小程序                         |                                                       |
 | :----------------------------------------------------: | :---------------------------------------------------: |
-|      ![image text](../example-img/pay/1.png)       |    ![image text](./example-img/pay/2.png)    |
-|      ![image text](../example-img/pay/3.png)       |    ![image text](./example-img/pay/4.png)    |
-|      ![image text](../example-img/pay/5.png)       |
+|      ![image text](./example-img/long/1.png)       |    ![image text](./example-img/long/2.jpg)    |
+|      ![image text](./example-img/long/3.png)       |    ![image text](./example-img/long/4.png)    |
+|      ![image text](./example-img/long/5.png)       |
