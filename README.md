@@ -1,6 +1,8 @@
 # ZYX-
 仿找房小程序的一套原生微信小程序前端模板，包含一套完整页面和数据结构，仅部分页面功能需要自行完善。
 
+码云地址：https://gitee.com/cao_jian_yu/zyxzhaofang.git
+
 ## 目录说明
 
 example-img是示例图片存放文件夹，可直接删除
